@@ -12,16 +12,16 @@ public class PlayerAbility : MonoBehaviour
     public float cooldownTime;
     public int bossSpeed;
     public int bossSpeedCheck;
-    public BossMove bossMoveScript;
+
+    public GameObject testBoss;
     public void Start()
     {
-        
+        bossSpeed = testBoss.GetComponent<BossMove>().bossSpeed;
     }
 
     public void Update()
     {
         Ability();
-        bossSpeed = GetComponent<BossMove>().bossSpeed;
     }
 
     public void Ability()

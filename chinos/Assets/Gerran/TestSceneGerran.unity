@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 945277493}
   - component: {fileID: 945277492}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TestBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   cooldownTime: 1
   bossSpeed: 0
   bossSpeedCheck: 0
-  bossMoveScript: {fileID: 945277492}
+  testBoss: {fileID: 945277491}
 --- !u!1 &1442608979
 GameObject:
   m_ObjectHideFlags: 0
