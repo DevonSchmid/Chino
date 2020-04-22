@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSpeed: 10
+  player: {fileID: 1375397476}
 --- !u!4 &945277493
 Transform:
   m_ObjectHideFlags: 0
@@ -484,9 +485,9 @@ MonoBehaviour:
   endDest: {x: 0, y: 0}
   timer: 0
   cooldownTime: 1
-  bossSpeed: 0
+  bossSpeedSetTo: 0
   bossSpeedCheck: 0
-  testBoss: {fileID: 945277491}
+  boss: {fileID: 945277491}
 --- !u!1 &1442608979
 GameObject:
   m_ObjectHideFlags: 0

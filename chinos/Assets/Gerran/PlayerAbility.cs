@@ -10,15 +10,14 @@ public class PlayerAbility : MonoBehaviour
     bool used = false;
     public float timer;
     public float cooldownTime;
-    public int bossSpeed;
+    public int bossSpeedSetTo;
     public int bossSpeedCheck;
+    public GameObject boss;
 
-    public GameObject testBoss;
-    public void Start()
+    private void Start()
     {
-        bossSpeed = testBoss.GetComponent<BossMove>().bossSpeed;
+        bossSpeedCheck = boss.GetComponent<BossMove>().bossSpeed;
     }
-
     public void Update()
     {
         Ability();
@@ -28,26 +27,25 @@ public class PlayerAbility : MonoBehaviour
     {
         if (used == false)
         {
-            bossSpeedCheck = bossSpeed;
-
             if (Input.GetButtonDown("Ability"))
             {
                 cooldownImage.rectTransform.sizeDelta = new Vector2(0, 100);
+                bossSpeedSetTo = 0;
                 used = true;
-                bossSpeed = 0;
-
             }
+
+        }
+        if (cooldownImage.rectTransform.sizeDelta.y <= -0.00001)
+        {
+             cooldownImage.rectTransform.sizeDelta = new Vector2(0, 0);
+             print("test");
+             used = false;
+             bossSpeedSetTo = bossSpeedCheck;
         }
         if (used == true)
         {
-            timer += Time.deltaTime;
             cooldownImage.rectTransform.sizeDelta -= new Vector2(0, cooldownTime * Time.deltaTime);
         }
-        if (cooldownImage.rectTransform.sizeDelta.y <= 0)
-        {
-            print(timer);
-            used = false;
-            bossSpeed = bossSpeedCheck;
-        }
     }
+    
 }
