@@ -10,13 +10,13 @@ public class PlayerAbility : MonoBehaviour
     bool used = false;
     public float timer;
     public float cooldownTime;
-    public int bossSpeedSetTo;
-    public int bossSpeedCheck;
+    public float bossSpeedSetTo;
+    public float bossSpeedCheck;
     public GameObject boss;
 
     private void Start()
     {
-        bossSpeedCheck = boss.GetComponent<BossMove>().bossSpeed;
+        bossSpeedCheck = boss.GetComponent<BossMovement>().bossAgent.speed;
     }
     public void Update()
     {
