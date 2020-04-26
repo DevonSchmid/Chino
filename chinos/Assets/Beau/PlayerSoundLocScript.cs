@@ -9,6 +9,8 @@ public class PlayerSoundLocScript : MonoBehaviour
 
     GameObject bossGameobject;
 
+    bool ifInCol;
+
     private void Start()
     {
         bossGameobject = GameObject.Find("Boss");
@@ -28,9 +30,12 @@ public class PlayerSoundLocScript : MonoBehaviour
         if (timer <= -0.0000001)
         {
             timer = 0;
-            bossGameobject.GetComponent<BossMovement>().bossAgent.SetDestination(bossGameobject.GetComponent<BossMovement>().newLocation);
-            print("doorgaan met lopen naar newloc");
-            bossGameobject.GetComponent<BossMovement>().hasRunned = false;
+            if (ifInCol == true)
+            {
+                bossGameobject.GetComponent<BossMovement>().hasRunned1 = false;
+                bossGameobject.GetComponent<BossMovement>().settingPlayerAsLocBool = false;
+                bossGameobject.GetComponent<BossMovement>().bossAgent.SetDestination(bossGameobject.GetComponent<BossMovement>().newLocation);
+            }
         }
     }
 
@@ -41,8 +46,16 @@ public class PlayerSoundLocScript : MonoBehaviour
             Vector3 desiredLocation = bossGameobject.GetComponent<BossMovement>().playerSoundLoc.transform.position;
             if (gameObject.transform.position == desiredLocation)
             {
+                ifInCol = true;
                 timer = addTimeToTimer;
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Boss")
+        {
+            ifInCol = false;
         }
     }
 }

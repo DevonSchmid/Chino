@@ -15,7 +15,7 @@ public class AlertScript : MonoBehaviour
     {
         if(inRange == true)
         {
-            bossGameobject.GetComponent<BossMovement>().PlayerAsLocation();
+            bossGameobject.GetComponent<BossMovement>().HearingPLayer();
         }
     }
 

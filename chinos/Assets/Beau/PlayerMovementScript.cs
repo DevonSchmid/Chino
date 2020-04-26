@@ -8,9 +8,10 @@ public class PlayerMovementScript : MonoBehaviour
     float fbRunSpeed, lrRunSpeed, fbCrouchSpeed;
     float movementFbSpeed, movementLrSpeed;
 
+    public bool ableToMove = true;
+
     SphereCollider radiusCol;
 
-    public GameObject bigRadius, mediumRadius, smallRadius;
     private void Start()
     {
         radiusCol = GameObject.Find("AlertingRadius").GetComponent<SphereCollider>();
@@ -68,18 +69,28 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void Walk()
     {
-        Lr = Input.GetAxis("Horizontal") * Time.deltaTime * movementLrSpeed;
-        Fb = Input.GetAxis("Vertical") * Time.deltaTime * movementFbSpeed;
+        if (ableToMove == true)
+        {
+            Lr = Input.GetAxis("Horizontal") * Time.deltaTime * movementLrSpeed;
+            Fb = Input.GetAxis("Vertical") * Time.deltaTime * movementFbSpeed;
 
-        movementFbSpeed = Mathf.Clamp(movementFbSpeed, 0, 6);
-        transform.Translate(Lr, 0, Fb);
+            movementFbSpeed = Mathf.Clamp(movementFbSpeed, 0, 6);
+            transform.Translate(Lr, 0, Fb);
+        }
     }
 
     public void SetAlertColRadius()
     {
         if (Lr == 0 && Fb == 0)
         {
-            radiusCol.radius = 4;
+            if (Input.GetButton("Crouch"))
+            {
+                radiusCol.radius = 2;
+            }
+            else
+            {
+                radiusCol.radius = 4f;
+            }
         }
         else
         {
@@ -89,7 +100,9 @@ public class PlayerMovementScript : MonoBehaviour
             }
             if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
-                radiusCol.radius = 6;
+                
+                radiusCol.radius = 4;
+
             }
             if (!Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {

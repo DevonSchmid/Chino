@@ -5,30 +5,35 @@ using UnityEngine.AI;
 
 public class BossMovement : MonoBehaviour
 {
-    public GameObject[] locations;
+    [HideInInspector] public GameObject[] locations;
     public GameObject bossLocationsEmptyGameObject, player,playerSoundLoc;
 
     int randomLocationNumber;
 
-    public NavMeshAgent bossAgent;
+    [HideInInspector] public NavMeshAgent bossAgent;
+    public float bossSpeed, bossRunSpeed;
 
-    public Vector3 newLocation, oldLocation;
+    [HideInInspector] public Vector3 newLocation, oldLocation;
 
-    public float timer;
-    int addTimeToTimer;
+    
+    float timer;
+    public int setTimeToTimer;
 
-    public bool hasRunned = false;
+    [HideInInspector] public bool hasRunned1 = false;
+    [HideInInspector] public bool settingPlayerAsLocBool;
 
     private void Start()
     {
         setupBossLocationArray();
         bossAgent = this.GetComponent<NavMeshAgent>();
+        bossAgent.speed = bossSpeed;
         RandomLocationNumberGenerator();
     }
 
     private void Update()
     {
-        
+        Timer();
+        SettingNewLocationAsPlayer();
     }
 
     public void setupBossLocationArray()
@@ -61,8 +66,37 @@ public class BossMovement : MonoBehaviour
         }
     }
 
-    public void PlayerAsLocation()
+    public void HearingPLayer()
     {
         playerSoundLoc.transform.position = new Vector3(player.transform.position.x, playerSoundLoc.transform.position.y, player.transform.position.z);
+
+        if(hasRunned1 == false)
+        {
+            hasRunned1 = true;
+            timer = setTimeToTimer;
+            bossAgent.speed = 0;
+        }
+    }
+
+    void Timer()
+    {
+        if(timer >= 0.0000001)
+        {
+            timer -= Time.deltaTime;
+        }
+        if(timer <= -0.00000001)
+        {
+            timer = 0;
+            bossAgent.speed = bossRunSpeed;
+            settingPlayerAsLocBool = true;
+        }
+    }
+
+    void SettingNewLocationAsPlayer()
+    {
+        if(settingPlayerAsLocBool == true)
+        {
+            bossAgent.SetDestination(playerSoundLoc.transform.position);
+        }
     }
 }
