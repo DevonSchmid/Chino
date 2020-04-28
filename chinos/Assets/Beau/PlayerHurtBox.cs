@@ -17,7 +17,7 @@ public class PlayerHurtBox : MonoBehaviour
         if(other.gameObject.tag == "Boss")
         {
             GetComponentInParent<PlayerMovementScript>().ableToMove = false;
-            bossGameobject.GetComponent<BossMovement>().bossAgent.speed = .7f;
+            bossGameobject.GetComponent<BossMovement>().bossAgent.speed = .5f;
             if (stunAbilityObj == true)
             {
                 stunAbilityObj.GetComponent<StunAbility>().AddTimeToTimer();

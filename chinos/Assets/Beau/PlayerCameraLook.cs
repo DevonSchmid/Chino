@@ -6,9 +6,9 @@ public class PlayerCameraLook : MonoBehaviour
 {
     public float sensitivity;
 
-    public GameObject playerBody, mainCamPos, straveLocRObj, straveLocLObj;
+    public GameObject playerBody;
 
-    float xRotation, zRotation;
+    float xRotation;
 
     private void Start()
     {
@@ -24,28 +24,7 @@ public class PlayerCameraLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -85f, 85f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0, zRotation);
+        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         playerBody.transform.Rotate(Vector3.up * mouseX);
-
-        if (Input.GetButtonDown("StraveR") && !Input.GetButtonDown("StraveL"))
-        {
-            transform.position = straveLocRObj.transform.position;
-            zRotation = -10;
-        }
-        if (Input.GetButtonUp("StraveR"))
-        {
-            transform.position = mainCamPos.transform.position;
-            zRotation = 0;
-        }
-        if (Input.GetButtonDown("StraveL") && !Input.GetButtonDown("StraveR"))
-        {
-            transform.position = straveLocLObj.transform.position;
-            zRotation = 10;
-        }
-        if (Input.GetButtonUp("StraveL"))
-        {
-            transform.position = mainCamPos.transform.position;
-            zRotation = 0;
-        }
     }
 }
