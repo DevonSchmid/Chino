@@ -12,6 +12,6 @@ public class BossMove : MonoBehaviour
     }
     public void Update()
     {
-        bossSpeed = player.GetComponent<PlayerAbility>().bossSpeedSetTo;
+        //bossSpeed = player.GetComponent<PlayerAbility>().bossSpeedSetTo;
     }
 }
