@@ -92,6 +92,7 @@ public class StunAbility : Abilitys
     void SkillCheckSucces()
     {
         succes = true;
+        skillCheckObj.GetComponent<Slider>().value = 0f;
         skillCheckOptions[0].SetActive(false); skillCheckOptions[1].SetActive(false); skillCheckOptions[2].SetActive(false);
         skillCheckObj.SetActive(false);
         GameObject.Find("Player").GetComponent<PlayerMovementScript>().ableToMove = true;
@@ -124,8 +125,10 @@ public class StunAbility : Abilitys
             timer = 0;
             if(succes == true)
             {
+                succes = false;
                 print("CanWalk");
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = bossGameobject.GetComponent<BossMovement>().bossSpeed;
+                bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 bossGameobject.GetComponent<BossMovement>().RandomLocationNumberGenerator();
             }
             else

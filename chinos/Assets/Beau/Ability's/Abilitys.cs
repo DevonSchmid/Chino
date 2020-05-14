@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Abilitys : MonoBehaviour
 {
     public float cooldownTimeMinPerSec;
 
     public Image abilityImage, abilityImageCover;
+    public AudioSource abilityReadySound;
 
     public virtual void Start()
     {
@@ -37,7 +39,7 @@ public class Abilitys : MonoBehaviour
         if(abilityImageCover.rectTransform.sizeDelta.y <= -0.000001)
         {
             abilityImageCover.rectTransform.sizeDelta = new Vector2(0, 0);
-            print("ability usable");
+            abilityReadySound.Play();
         }
     }
 }

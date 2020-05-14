@@ -26,6 +26,8 @@ public class BossLocationsScript : MonoBehaviour
             Vector3 desiredLocation = bossGameobject.GetComponent<BossMovement>().newLocation;
             if(gameObject.transform.position == desiredLocation)
             {
+                bossGameobject.GetComponent<BossMovement>().bossAgent.speed = 0f;
+                bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 timer = addTimeToTimer;
             }
         }
@@ -40,6 +42,8 @@ public class BossLocationsScript : MonoBehaviour
         if (timer <= -0.0000001)
         {
             timer = 0;
+            bossGameobject.GetComponent<BossMovement>().bossAgent.speed = bossGameobject.GetComponent<BossMovement>().bossSpeed;
+            bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             bossGameobject.GetComponent<BossMovement>().RandomLocationNumberGenerator();
         }
     }

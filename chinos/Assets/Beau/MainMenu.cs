@@ -2,14 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject mainMenuScreen, optionsScreen, chooseAbilityScreen;
+    public GameObject mainMenuScreen, chooseAbilityScreen;
+    public GameObject[] backGrounds;
+
+    public AudioSource menuMusic;
 
     private void Start()
     {
+        RandomBackGround();
+    }
 
+    void RandomBackGround()
+    {
+        int randomBackgroundNumber = Random.Range(0, backGrounds.Length);
+        backGrounds[randomBackgroundNumber].SetActive(true);
+    }
+
+    public void MuteMenuMusic()
+    {
+        if(menuMusic.isPlaying == true)
+        {
+            menuMusic.Pause();
+        }
+        else
+        {
+            menuMusic.Play();
+        }
     }
 
     public void StartGame()
@@ -20,14 +42,12 @@ public class MainMenu : MonoBehaviour
     public void BackToMenu()
     {
         mainMenuScreen.SetActive(true);
-        optionsScreen.SetActive(false);
         chooseAbilityScreen.SetActive(false);
     }
 
     public void GoToOptions()
     {
         mainMenuScreen.SetActive(false);
-        optionsScreen.SetActive(true);
     }
 
     public void GoChooseAbilityScreen()

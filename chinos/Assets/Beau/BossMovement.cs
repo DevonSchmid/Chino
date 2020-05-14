@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class BossMovement : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class BossMovement : MonoBehaviour
     [HideInInspector] public bool hasRunned1 = false;
     [HideInInspector] public bool settingPlayerAsLocBool;
 
+    public AudioSource hearingPlayerSound, followingMusic, bossFootStep;
+
     private void Start()
     {
         setupBossLocationArray();
@@ -32,6 +35,8 @@ public class BossMovement : MonoBehaviour
 
     private void Update()
     {
+        FootStepTimer();
+
         Timer();
         SettingNewLocationAsPlayer();
     }
@@ -68,14 +73,16 @@ public class BossMovement : MonoBehaviour
 
     public void HearingPLayer()
     {
-        playerSoundLoc.transform.position = new Vector3(player.transform.position.x, playerSoundLoc.transform.position.y, player.transform.position.z);
-
         if(hasRunned1 == false)
         {
             hasRunned1 = true;
+
+            hearingPlayerSound.Play();
+
             timer = setTimeToTimer;
             bossAgent.speed = 0;
         }
+        playerSoundLoc.transform.position = new Vector3(player.transform.position.x, playerSoundLoc.transform.position.y, player.transform.position.z);
     }
 
     void Timer()
@@ -87,6 +94,7 @@ public class BossMovement : MonoBehaviour
         if(timer <= -0.00000001)
         {
             timer = 0;
+            followingMusic.Play();
             bossAgent.speed = bossRunSpeed;
             settingPlayerAsLocBool = true;
         }
@@ -97,6 +105,32 @@ public class BossMovement : MonoBehaviour
         if(settingPlayerAsLocBool == true)
         {
             bossAgent.SetDestination(playerSoundLoc.transform.position);
+        }
+    }
+
+    public float addWalkTime, addRunTime;
+    public float footStepTimer;
+    void FootStepTimer()
+    {
+        if (bossAgent.speed != 0)
+        {
+            if (footStepTimer >= 0.000000001f)
+            {
+                footStepTimer -= Time.deltaTime;
+            }
+            else if (footStepTimer <= 0)
+            {
+                bossFootStep.pitch = Random.Range(0.6f, 0.8f);
+                bossFootStep.Play();
+                if(bossAgent.speed == bossSpeed)
+                {
+                    footStepTimer = addWalkTime;
+                }
+                else if(bossAgent.speed == bossRunSpeed)
+                {
+                    footStepTimer = addRunTime;
+                }
+            }
         }
     }
 }

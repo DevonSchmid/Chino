@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
+using UnityEngine.Audio;
 
 public class MenusManager : MonoBehaviour
 {
-    public GameObject menuPanel, optionsPanel, graphicsDropdown, windowDropdown;
+    public GameObject playerCam, menuPanel, optionsPanel, graphicsDropdown, windowDropdown;
+
+    public Slider sensitivitySlider, masterVolumeSlider, musicVolumeSlider, soundVolumeSlider, notificationVolumeSlider;
+    public AudioMixer mixer;
 
     private void Update()
     {
@@ -98,5 +101,28 @@ public class MenusManager : MonoBehaviour
         {
             Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
         }
+    }
+    public void SensitivityChange()
+    {
+        playerCam.GetComponent<PlayerCameraLook>().sensitivity = sensitivitySlider.value * 100;
+        print(sensitivitySlider.value);
+    }
+
+    public void SetMasterVolume()
+    {
+        mixer.SetFloat("Master Volume", masterVolumeSlider.value);  
+    }
+
+    public void SetMusicVolume()
+    {
+        mixer.SetFloat("Music Volume", musicVolumeSlider.value);
+    }
+    public void SetNotificationVolume()
+    {
+        mixer.SetFloat("Notification Volume", notificationVolumeSlider.value);
+    }
+    public void SetSoundVolume()
+    {
+        mixer.SetFloat("Sound Volume", soundVolumeSlider.value);
     }
 }
