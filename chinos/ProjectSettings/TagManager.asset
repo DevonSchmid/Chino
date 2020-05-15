@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss
   - Item
+  - Usable
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Beau/Game.unity
+- path: Assets/Gerran/BeauTest/BeauTest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

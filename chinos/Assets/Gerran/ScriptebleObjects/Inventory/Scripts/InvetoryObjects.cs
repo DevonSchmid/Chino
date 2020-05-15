@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName ="New Inventory", menuName = "inventory System/Inventory")]
 public class InvetoryObjects : ScriptableObject
 {
+    /*
     public int e;
     public List<InventorySlot> Container = new List<InventorySlot>();
     public Image[] slots;
@@ -26,13 +27,16 @@ public class InvetoryObjects : ScriptableObject
             slots[e].sprite = Container[e].item.sprite;
         }
     }
+    */
 }
 [System.Serializable]
 public class InventorySlot
 {
+    /*
     public ItemObject item;
     public InventorySlot(ItemObject _item)
     {
         item = _item;
     }
+    */
 }
