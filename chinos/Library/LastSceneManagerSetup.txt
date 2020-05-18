@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Gerran/BeauTest/BeauTest.unity
+- path: Assets/Devon/Scene Devon.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
