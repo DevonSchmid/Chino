@@ -110,19 +110,19 @@ public class MenusManager : MonoBehaviour
 
     public void SetMasterVolume()
     {
-        mixer.SetFloat("Master Volume", masterVolumeSlider.value);  
+        mixer.SetFloat("Master Volume", Mathf.Log10(masterVolumeSlider.value) * 20);
     }
 
     public void SetMusicVolume()
     {
-        mixer.SetFloat("Music Volume", musicVolumeSlider.value);
+        mixer.SetFloat("Music Volume", Mathf.Log10(musicVolumeSlider.value) * 20);
     }
     public void SetNotificationVolume()
     {
-        mixer.SetFloat("Notification Volume", notificationVolumeSlider.value);
+        mixer.SetFloat("Notifivation Vollume", Mathf.Log10(notificationVolumeSlider.value) * 20);
     }
     public void SetSoundVolume()
     {
-        mixer.SetFloat("Sound Volume", soundVolumeSlider.value);
+        mixer.SetFloat("Sound Volume", Mathf.Log10(soundVolumeSlider.value) * 20);
     }
 }
