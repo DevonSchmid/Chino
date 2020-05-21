@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -8,9 +9,14 @@ public class PlayerMovementScript : MonoBehaviour
     float fbRunSpeed, lrRunSpeed, fbCrouchSpeed;
     float movementFbSpeed, movementLrSpeed;
 
+    public Image soundImage;
+    public Sprite sound1, sound2, sound3, sound4;
+
     public bool ableToMove = true;
 
     SphereCollider radiusCol;
+
+    Animator anim;
 
     private void Start()
     {
@@ -18,6 +24,8 @@ public class PlayerMovementScript : MonoBehaviour
 
         movementFbSpeed = fbspeed;
         movementLrSpeed = lrspeed;
+
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -86,10 +94,13 @@ public class PlayerMovementScript : MonoBehaviour
             if (Input.GetButton("Crouch"))
             {
                 radiusCol.radius = 2;
+                soundImage.sprite = sound1;
+                anim.SetTrigger("StartCrouching");
             }
             else
             {
                 radiusCol.radius = 4f;
+                soundImage.sprite = sound2;
             }
         }
         else
@@ -97,16 +108,21 @@ public class PlayerMovementScript : MonoBehaviour
             if (Input.GetButton("Run") && !Input.GetButton("Crouch"))
             {
                 radiusCol.radius = 14;
+                soundImage.sprite = sound4;
+                anim.SetTrigger("StartRunning");
             }
             if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
                 
                 radiusCol.radius = 4;
+                soundImage.sprite = sound2;
+                anim.SetTrigger("StartCrouchWalking");
 
             }
             if (!Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
                 radiusCol.radius = 10;
+                soundImage.sprite = sound3;
             }
         }
     }

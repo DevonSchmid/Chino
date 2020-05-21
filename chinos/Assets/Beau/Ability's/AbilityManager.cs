@@ -5,18 +5,11 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     public int abilityNumber;
-
     public GameObject[] abilitys;
 
     private void Start()
     {
         abilityNumber = AbilitySelector.abilitySelect;
-        print(abilityNumber);
-
-        if(abilityNumber == 1)
-        {
-            StunAbilitySetActive(); 
-        }
     }
 
     public void StunAbilitySetActive()

@@ -8,13 +8,16 @@ public class Abilitys : MonoBehaviour
 {
     public float cooldownTimeMinPerSec;
 
-    public Image abilityImage, abilityImageCover;
+    public GameObject abilityImageLoc;
+    public Sprite abilityImage;
+    public Image abilityImageCover;
     public AudioSource abilityReadySound;
 
     public virtual void Start()
     {
         abilityImageCover = GameObject.Find("AbilityCooldownCover").GetComponent<Image>();
         abilityImageCover.rectTransform.sizeDelta = new Vector2(0, 100);
+        abilityImageLoc.GetComponent<Image>().sprite = abilityImage;
     }
 
     public virtual void Update()
