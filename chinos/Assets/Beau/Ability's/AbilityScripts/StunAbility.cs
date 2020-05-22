@@ -12,6 +12,8 @@ public class StunAbility : Abilitys
     public GameObject[] skillCheckOptions;
     GameObject bossGameobject;
 
+    public AudioSource skillCheckSound;
+
     bool succes;
 
     public override void Start()
@@ -42,7 +44,7 @@ public class StunAbility : Abilitys
     }
     public void DoSkillCheck()
     {
-        //play skillcheck sound
+        skillCheckSound.Play();
         int randomNumber = Random.Range(0, skillCheckOptions.Length);
 
         if (randomNumber == 0)

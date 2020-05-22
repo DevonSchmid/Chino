@@ -11,6 +11,8 @@ public class MenusManager : MonoBehaviour
     public Slider sensitivitySlider, masterVolumeSlider, musicVolumeSlider, soundVolumeSlider, notificationVolumeSlider;
     public AudioMixer mixer;
 
+    public AudioSource buttonHoverSound, buttonClickSound;
+
     private void Update()
     {
         SetMenuPanel();
@@ -44,6 +46,7 @@ public class MenusManager : MonoBehaviour
 
     public void SetMenuPanelInactve()
     {
+        buttonClickSound.Play();
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -53,18 +56,21 @@ public class MenusManager : MonoBehaviour
 
     public void BackToMenuPanel()
     {
+        buttonClickSound.Play();
         menuPanel.SetActive(true);
         optionsPanel.SetActive(false);
     }
 
     public void SetOptionsPanelActive()
     {
+        buttonClickSound.Play();
         menuPanel.SetActive(false);
         optionsPanel.SetActive(true);
     }
 
     public void QuitGame()
     {
+        buttonClickSound.Play();
         Application.Quit();
         print("QuitGame");
     }
@@ -87,42 +93,38 @@ public class MenusManager : MonoBehaviour
             QualitySettings.SetQualityLevel(2, true);
         }
     }
-    public void ChangeWindow()
-    {
-        if(windowDropdown.GetComponent<TMPro.TMP_Dropdown>().value == 0)
-        {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
-        if (windowDropdown.GetComponent<TMPro.TMP_Dropdown>().value == 1)
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
-        if (windowDropdown.GetComponent<TMPro.TMP_Dropdown>().value == 2)
-        {
-            Screen.fullScreenMode = FullScreenMode.MaximizedWindow;
-        }
-    }
+
     public void SensitivityChange()
     {
+        buttonClickSound.Play();
         playerCam.GetComponent<PlayerCameraLook>().sensitivity = sensitivitySlider.value * 100;
         print(sensitivitySlider.value);
     }
 
     public void SetMasterVolume()
     {
+        buttonClickSound.Play();
         mixer.SetFloat("Master Volume", Mathf.Log10(masterVolumeSlider.value) * 20);
     }
 
     public void SetMusicVolume()
     {
+        buttonClickSound.Play();
         mixer.SetFloat("Music Volume", Mathf.Log10(musicVolumeSlider.value) * 20);
     }
     public void SetNotificationVolume()
     {
-        mixer.SetFloat("Notifivation Vollume", Mathf.Log10(notificationVolumeSlider.value) * 20);
+        buttonClickSound.Play();
+        mixer.SetFloat("Notification Volume", Mathf.Log10(notificationVolumeSlider.value) * 20);
     }
     public void SetSoundVolume()
     {
+        buttonClickSound.Play();
         mixer.SetFloat("Sound Volume", Mathf.Log10(soundVolumeSlider.value) * 20);
+    }
+
+    public void HoverSound()
+    {
+        buttonHoverSound.Play();
     }
 }

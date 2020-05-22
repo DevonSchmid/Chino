@@ -10,10 +10,19 @@ public class PlayerHurtBox : MonoBehaviour
 
     public AudioSource bossScareSound, defeatSound;
 
+    bool lookAtBoss;
     private void Start()
     {
         bossGameobject = GameObject.Find("Boss");
         stunAbilityObj = GameObject.Find("StunAbility");
+    }
+
+    private void Update()
+    {
+        if(lookAtBoss == true)
+        {
+            playerCam.transform.LookAt(bossFace.transform);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,8 +32,6 @@ public class PlayerHurtBox : MonoBehaviour
             GetComponentInParent<PlayerMovementScript>().ableToMove = false;
             bossGameobject.GetComponent<BossMovement>().bossAgent.speed = 0f;
             bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
-            playerCam.transform.LookAt(bossFace.transform);
 
             if (stunAbilityObj == true)
             {
@@ -39,6 +46,14 @@ public class PlayerHurtBox : MonoBehaviour
 
     public void PlayerDied()
     {
-        print("PlayerDead");
+        lookAtBossTimer();
+    }
+
+    IEnumerator lookAtBossTimer()
+    {
+        bossScareSound.Play();
+        lookAtBoss = true;
+        yield return new WaitForSeconds(2.6f);
+        lookAtBoss = false;
     }
 }

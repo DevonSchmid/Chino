@@ -16,16 +16,12 @@ public class PlayerMovementScript : MonoBehaviour
 
     SphereCollider radiusCol;
 
-    Animator anim;
-
     private void Start()
     {
         radiusCol = GameObject.Find("AlertingRadius").GetComponent<SphereCollider>();
 
         movementFbSpeed = fbspeed;
         movementLrSpeed = lrspeed;
-
-        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -95,7 +91,6 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 radiusCol.radius = 2;
                 soundImage.sprite = sound1;
-                anim.SetTrigger("StartCrouching");
             }
             else
             {
@@ -109,14 +104,12 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 radiusCol.radius = 14;
                 soundImage.sprite = sound4;
-                anim.SetTrigger("StartRunning");
             }
             if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
                 
                 radiusCol.radius = 4;
                 soundImage.sprite = sound2;
-                anim.SetTrigger("StartCrouchWalking");
 
             }
             if (!Input.GetButton("Crouch") && !Input.GetButton("Run"))

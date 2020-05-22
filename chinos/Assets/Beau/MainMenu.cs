@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenuScreen, chooseAbilityScreen;
     public GameObject[] backGrounds;
 
-    public AudioSource menuMusic;
+    public AudioSource menuMusic, buttonHoverSound, buttonClickSound;
 
     private void Start()
     {
@@ -24,7 +24,8 @@ public class MainMenu : MonoBehaviour
 
     public void MuteMenuMusic()
     {
-        if(menuMusic.isPlaying == true)
+        buttonClickSound.Play();
+        if (menuMusic.isPlaying == true)
         {
             menuMusic.Pause();
         }
@@ -36,28 +37,38 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        buttonClickSound.Play();
         SceneManager.LoadScene("Game");
     }
 
     public void BackToMenu()
     {
+        buttonClickSound.Play();
         mainMenuScreen.SetActive(true);
         chooseAbilityScreen.SetActive(false);
     }
 
     public void GoToOptions()
     {
+        buttonClickSound.Play();
         mainMenuScreen.SetActive(false);
     }
 
     public void GoChooseAbilityScreen()
     {
+        buttonClickSound.Play();
         mainMenuScreen.SetActive(false);
         chooseAbilityScreen.SetActive(true);
     }
 
+    public void HoverSound()
+    {
+        buttonHoverSound.Play();
+    }
+
     public void QuitGame()
     {
+        buttonClickSound.Play();
         Application.Quit();
         print("Quitting");
     }

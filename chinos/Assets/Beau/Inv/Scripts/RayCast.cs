@@ -12,7 +12,9 @@ public class RayCast : MonoBehaviour
 
     public GameObject crossHair;
 
-    public Sprite standardPic;
+    //public Sprite standardPic;
+
+    public AudioSource pickUpSound, useSound;
 
     private void Update()
     {
@@ -33,6 +35,7 @@ public class RayCast : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Item")
                 {
+                    pickUpSound.Play();
                     AddItem(hit.collider.gameObject.transform.parent.gameObject);
                 }
                 if(hit.collider.gameObject.tag == "Usable")
@@ -72,6 +75,7 @@ public class RayCast : MonoBehaviour
         {
             if (usableItem.GetComponent<Usables>().addItemIds[i] == inventory.slots[0].GetComponent<Slot>().itemId)
             {
+                useSound.Play();
                 usableItem.GetComponent<Usables>().addItemObj[i].gameObject.SetActive(true);
                 inventory.slots[0].GetComponent<Slot>().itemName = null;
                 inventory.slots[0].GetComponent<Slot>().itemId = 0;
