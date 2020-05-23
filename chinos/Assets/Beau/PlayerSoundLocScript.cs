@@ -43,6 +43,8 @@ public class PlayerSoundLocScript : MonoBehaviour
         if (timer <= -0.0000001)
         {
             timer = 0;
+            print("can walk by player sound loc script");
+
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = bossGameobject.GetComponent<BossMovement>().bossSpeed;
                 bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
@@ -65,13 +67,6 @@ public class PlayerSoundLocScript : MonoBehaviour
 
                 minusVolume = true;
             }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag == "Boss")
-        {
-
         }
     }
 }

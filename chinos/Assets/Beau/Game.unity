@@ -2879,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &107674262
 Transform:
   m_ObjectHideFlags: 0
@@ -25080,7 +25080,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 012e12a8f4fc60147a9ba1a7d2ce4019,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 012e12a8f4fc60147a9ba1a7d2ce4019,
         type: 3}
@@ -26332,6 +26332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206488233}
+  - component: {fileID: 1206488236}
   - component: {fileID: 1206488232}
   - component: {fileID: 1206488231}
   - component: {fileID: 1206488234}
@@ -26439,6 +26440,25 @@ MonoBehaviour:
   crossHair: {fileID: 1696210230}
   pickUpSound: {fileID: 748344935}
   useSound: {fileID: 1175455726}
+--- !u!95 &1206488236
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206488230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6818228768da6946bef52f8f8dec989, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1210853527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27255,9 +27275,9 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d1ac29d0cfe33d94c81cf33fb77ed85a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.005
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -33979,6 +33999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dfd1f6f64de5644a4ce070c8d7df2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1206488230}
 --- !u!4 &1544819945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3cb4e559e07e21f4ab8712a9ce83684f,
@@ -34660,7 +34681,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e33f7d10052822f44a0581e087f5d1a9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: e33f7d10052822f44a0581e087f5d1a9,
         type: 3}
@@ -35884,6 +35905,7 @@ MonoBehaviour:
   runMultiplier: 1.5
   crouchDevider: 2
   crouchTransfrom: 0.5
+  radias: 04000000080000000f00000014000000
   soundImage: {fileID: 1590612216}
   sound1: {fileID: 21300000, guid: 81fd4e55cafdd6247b2c55de8735383a, type: 3}
   sound2: {fileID: 21300000, guid: 0fa984af9b4fc1e41a99a6dc6f9f5640, type: 3}
@@ -39719,11 +39741,12 @@ MonoBehaviour:
   addTimeToTimerStun: 10
   timer: 0
   skillCheckObj: {fileID: 777253222}
+  playerSoundLocScript: {fileID: 1184346748}
   skillCheckOptions:
   - {fileID: 1064302422}
   - {fileID: 1707928082}
   - {fileID: 775557297}
-  skillCheckSound: {fileID: 0}
+  skillCheckSound: {fileID: 1337510816}
 --- !u!1 &1805433266
 GameObject:
   m_ObjectHideFlags: 0
@@ -41241,6 +41264,7 @@ MonoBehaviour:
   oldLocation: {x: 0, y: 0, z: 0}
   setTimeToTimer: 3
   hasRunned1: 0
+  alreadyInChase: 0
   settingPlayerAsLocBool: 0
   hearingPlayerSound: {fileID: 2098551505}
   followingMusic: {fileID: 904177321}
@@ -41983,11 +42007,11 @@ MonoBehaviour:
   optionsPanel: {fileID: 768247581}
   graphicsDropdown: {fileID: 550484923}
   windowDropdown: {fileID: 0}
-  sensitivitySlider: {fileID: 0}
+  sensitivitySlider: {fileID: 1047402930}
   masterVolumeSlider: {fileID: 748681318}
-  musicVolumeSlider: {fileID: 0}
-  soundVolumeSlider: {fileID: 0}
-  notificationVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 405178233}
+  soundVolumeSlider: {fileID: 448318815}
+  notificationVolumeSlider: {fileID: 1016093293}
   mixer: {fileID: 24100000, guid: 001572cee8e514640a005698d5b04c51, type: 2}
   buttonHoverSound: {fileID: 1472062952}
   buttonClickSound: {fileID: 1013233000}
@@ -43467,6 +43491,7 @@ MonoBehaviour:
   bossFace: {fileID: 2090167201}
   bossScareSound: {fileID: 622134966}
   defeatSound: {fileID: 1240811001}
+  bossFollowMusic: {fileID: 0}
 --- !u!1 &2022230752
 GameObject:
   m_ObjectHideFlags: 0
@@ -44966,7 +44991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090167201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.53, z: 0.51}
+  m_LocalPosition: {x: 0, y: 0.53, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1886786555}

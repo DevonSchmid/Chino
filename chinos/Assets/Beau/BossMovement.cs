@@ -20,7 +20,7 @@ public class BossMovement : MonoBehaviour
     float timer;
     public int setTimeToTimer;
 
-    [HideInInspector] public bool hasRunned1 = false;
+    public bool hasRunned1 = false, alreadyInChase = false;
     [HideInInspector] public bool settingPlayerAsLocBool;
 
     public AudioSource hearingPlayerSound, followingMusic, bossFootStep;
@@ -73,8 +73,9 @@ public class BossMovement : MonoBehaviour
 
     public void HearingPLayer()
     {
-        if(hasRunned1 == false)
+        if (hasRunned1 == false && alreadyInChase == false)
         {
+            print("hearing player");
             hasRunned1 = true;
 
             hearingPlayerSound.Play();
@@ -97,6 +98,7 @@ public class BossMovement : MonoBehaviour
             followingMusic.Play();
             bossAgent.speed = bossRunSpeed;
             settingPlayerAsLocBool = true;
+
         }
     }
 

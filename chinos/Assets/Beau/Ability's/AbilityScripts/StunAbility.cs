@@ -8,7 +8,7 @@ public class StunAbility : Abilitys
     public int addTimeToTimer, addTimeToTimerStun;
     public float timer;
 
-    public GameObject skillCheckObj;
+    public GameObject skillCheckObj, playerSoundLocScript;
     public GameObject[] skillCheckOptions;
     GameObject bossGameobject;
 
@@ -93,6 +93,9 @@ public class StunAbility : Abilitys
 
     void SkillCheckSucces()
     {
+        bossGameobject.GetComponent<BossMovement>().alreadyInChase = true;
+        playerSoundLocScript.GetComponent<PlayerSoundLocScript>().timer = 0;
+
         succes = true;
         skillCheckObj.GetComponent<Slider>().value = 0f;
         skillCheckOptions[0].SetActive(false); skillCheckOptions[1].SetActive(false); skillCheckOptions[2].SetActive(false);
@@ -112,8 +115,6 @@ public class StunAbility : Abilitys
         {
             GameObject.Find("PlayerHurtBox").GetComponent<PlayerHurtBox>().PlayerDied();
         }
-
-        
     }
 
     void Timer()
@@ -129,12 +130,15 @@ public class StunAbility : Abilitys
             {
                 succes = false;
                 print("CanWalk");
+                bossGameobject.GetComponent<BossMovement>().hasRunned1 = false;
+                bossGameobject.GetComponent<BossMovement>().alreadyInChase = false;
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = bossGameobject.GetComponent<BossMovement>().bossSpeed;
                 bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 bossGameobject.GetComponent<BossMovement>().RandomLocationNumberGenerator();
             }
             else
             {
+                print("do skillcheck");
                 DoSkillCheck();
             }
         }

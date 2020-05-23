@@ -8,7 +8,7 @@ public class PlayerHurtBox : MonoBehaviour
     public GameObject playerCam, bossFace;
     GameObject stunAbilityObj, bossGameobject;
 
-    public AudioSource bossScareSound, defeatSound;
+    public AudioSource bossScareSound, defeatSound, bossFollowMusic;
 
     bool lookAtBoss;
     private void Start()
@@ -29,6 +29,9 @@ public class PlayerHurtBox : MonoBehaviour
     {
         if(other.gameObject.tag == "Boss")
         {
+            StartCoroutine(lookAtBossTimer());
+
+            bossGameobject.GetComponent<BossMovement>().alreadyInChase = true;
             GetComponentInParent<PlayerMovementScript>().ableToMove = false;
             bossGameobject.GetComponent<BossMovement>().bossAgent.speed = 0f;
             bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -46,14 +49,16 @@ public class PlayerHurtBox : MonoBehaviour
 
     public void PlayerDied()
     {
-        lookAtBossTimer();
+        print("You died");
+        bossFollowMusic.Stop();
+        defeatSound.Play();
     }
 
     IEnumerator lookAtBossTimer()
     {
         bossScareSound.Play();
         lookAtBoss = true;
-        yield return new WaitForSeconds(2.6f);
+        yield return new WaitForSeconds(1.5f);
         lookAtBoss = false;
     }
 }

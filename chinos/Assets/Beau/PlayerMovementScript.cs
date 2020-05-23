@@ -9,6 +9,8 @@ public class PlayerMovementScript : MonoBehaviour
     float fbRunSpeed, lrRunSpeed, fbCrouchSpeed;
     float movementFbSpeed, movementLrSpeed;
 
+    public int[] radias;
+
     public Image soundImage;
     public Sprite sound1, sound2, sound3, sound4;
 
@@ -31,6 +33,7 @@ public class PlayerMovementScript : MonoBehaviour
         Run();
         Crouch();
         SetAlertColRadius();
+
     }
 
     public void Strave()
@@ -89,12 +92,12 @@ public class PlayerMovementScript : MonoBehaviour
         {
             if (Input.GetButton("Crouch"))
             {
-                radiusCol.radius = 2;
+                radiusCol.radius = radias[0];
                 soundImage.sprite = sound1;
             }
             else
             {
-                radiusCol.radius = 4f;
+                radiusCol.radius = radias[1];
                 soundImage.sprite = sound2;
             }
         }
@@ -102,19 +105,19 @@ public class PlayerMovementScript : MonoBehaviour
         {
             if (Input.GetButton("Run") && !Input.GetButton("Crouch"))
             {
-                radiusCol.radius = 14;
+                radiusCol.radius = radias[3];
                 soundImage.sprite = sound4;
             }
             if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
                 
-                radiusCol.radius = 4;
+                radiusCol.radius = radias[1];
                 soundImage.sprite = sound2;
 
             }
             if (!Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
-                radiusCol.radius = 10;
+                radiusCol.radius = radias[2];
                 soundImage.sprite = sound3;
             }
         }
