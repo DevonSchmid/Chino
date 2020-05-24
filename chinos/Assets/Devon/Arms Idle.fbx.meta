@@ -4,9 +4,6 @@ ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -6008554918234176436
-    second: Cube|CrouchWalk
-  - first:
       74: 6533196968295754381
     second: metarig|Crouch
   - first:
@@ -18,9 +15,6 @@ ModelImporter:
   - first:
       74: -5734110227633597834
     second: metarig|CrouchIdle3
-  - first:
-      74: 5200233954854271148
-    second: metarig|CrouchNeutral
   - first:
       74: 8144370860992494471
     second: metarig|CrouchWalk
