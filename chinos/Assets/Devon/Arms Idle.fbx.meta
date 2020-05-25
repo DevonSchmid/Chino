@@ -16,6 +16,9 @@ ModelImporter:
       74: -5734110227633597834
     second: metarig|CrouchIdle3
   - first:
+      74: 5200233954854271148
+    second: metarig|CrouchNeutral
+  - first:
       74: 8144370860992494471
     second: metarig|CrouchWalk
   - first:
