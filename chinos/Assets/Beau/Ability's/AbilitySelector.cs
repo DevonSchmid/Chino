@@ -12,6 +12,11 @@ public class AbilitySelector : MonoBehaviour
         abilitySelect = 1;
         buttonClick.Play();
     }
+    public void SelectAbilityTwo()
+    {
+        abilitySelect = 2;
+        buttonClick.Play();
+    }
 
     public void SelectAbilityComingSoon()
     {

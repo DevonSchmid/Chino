@@ -10,10 +10,6 @@ public class AbilityManager : MonoBehaviour
     private void Start()
     {
         abilityNumber = AbilitySelector.abilitySelect;
-    }
-
-    public void StunAbilitySetActive()
-    {
-        abilitys[0].SetActive(true);
+        abilitys[abilityNumber - 1].SetActive(true);
     }
 }

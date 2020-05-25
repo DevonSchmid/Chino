@@ -13,6 +13,11 @@ public class AbilityHoverScript : MonoBehaviour
             infoTextPanel.SetActive(true);
             infoText.text = "Do a skillCheck when catched by the killer to have a second chance";
         }
+        else if (gameObject.name == "SmallRadius")
+        {
+            infoTextPanel.SetActive(true);
+            infoText.text = "makes your alerting radius smaller when moving";
+        }
         else if (gameObject.name == "Coming Soon")
         {
             infoTextPanel.SetActive(true);

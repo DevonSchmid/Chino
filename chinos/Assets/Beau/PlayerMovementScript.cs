@@ -9,7 +9,7 @@ public class PlayerMovementScript : MonoBehaviour
     float fbRunSpeed, lrRunSpeed, fbCrouchSpeed;
     float movementFbSpeed, movementLrSpeed;
 
-    public int[] radias;
+    public float[] radias;
 
     public Image soundImage;
     public Sprite sound1, sound2, sound3, sound4;
