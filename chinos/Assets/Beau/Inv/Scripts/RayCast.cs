@@ -12,8 +12,6 @@ public class RayCast : MonoBehaviour
 
     public GameObject crossHair;
 
-    //public Sprite standardPic;
-
     public AudioSource pickUpSound, useSound;
 
     private void Update()
@@ -71,20 +69,24 @@ public class RayCast : MonoBehaviour
 
     void UseUsable(GameObject usableItem)
     {
-        for(int i = 0; i < usableItem.GetComponent<Usables>().addItemIds.Length; i++)
+        for(int i = 0; i < usableItem.GetComponent<GeneratorScript>().addItemIds.Length; i++)
         {
-            if (usableItem.GetComponent<Usables>().addItemIds[i] == inventory.slots[0].GetComponent<Slot>().itemId)
+            if (usableItem.GetComponent<GeneratorScript>().addItemIds[i] == inventory.slots[0].GetComponent<Slot>().itemId)
             {
                 useSound.Play();
-                usableItem.GetComponent<Usables>().addItemObj[i].gameObject.SetActive(true);
+                usableItem.GetComponent<GeneratorScript>().addItemObj[i].gameObject.SetActive(true);
                 inventory.slots[0].GetComponent<Slot>().itemName = null;
                 inventory.slots[0].GetComponent<Slot>().itemId = 0;
                 inventory.slots[0].GetComponent<Slot>().itemSprite = null;
                 inventory.slots[0].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
 
                 inventory.RerangeItems();
-                usableItem.GetComponent<Usables>().TestIfComplete();
+                usableItem.GetComponent<GeneratorScript>().TestIfComplete();
                 return;
+            }
+            else if(usableItem.GetComponent<GeneratorScript>().phoneReady == true)
+            {
+                usableItem.GetComponent<GeneratorScript>().HitThePhone();
             }
         }
     }
