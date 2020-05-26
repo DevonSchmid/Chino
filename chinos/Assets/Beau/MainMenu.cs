@@ -40,7 +40,14 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         buttonClickSound.Play();
-        SceneManager.LoadScene("Game");
+        if(LevelManager.levelNumber == 1)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        if(LevelManager.levelNumber == 2)
+        {
+            SceneManager.LoadScene("Level1");
+        }
     }
 
     public void BackToMenu()

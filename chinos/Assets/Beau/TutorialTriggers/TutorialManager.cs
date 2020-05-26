@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
-using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
@@ -14,7 +14,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject invisibleWall1, invisibleWall2, invisibleWall3, invisibleWall4;
 
     public TutorialBoss bossScript;
-    public AudioSource abilityReadySound;
+    public AudioSource abilityReadySound, skillCheckSound;
 
     public GameObject skillCheckObj, skillCheckBackground;
     bool goSkillCheckBool;
@@ -25,11 +25,18 @@ public class TutorialManager : MonoBehaviour
 
     int triggerNumber = 1;
 
+    public GameObject levelManager;
+
     private void Start()
     {
         coroutine = StartTutorial();
         StartCoroutine(coroutine);
         generator1.GetComponent<GeneratorScript>().inTutorial = true;
+
+        
+        StopCoroutine(coroutine);
+        coroutine = SkillCheckFinished();
+        StartCoroutine(coroutine);
     }
 
     private void Update()
@@ -65,16 +72,25 @@ public class TutorialManager : MonoBehaviour
             {
             print("SkillCheck Good");
                 skillCheckObj.SetActive(false); skillCheckBackground.SetActive(false);
+                StopCoroutine(coroutine);
+                coroutine = SkillCheckFinished();
+                StartCoroutine(coroutine);
             }
             else if(Input.GetButtonDown("Ability"))
             {
                 print("SkillCheck Failed");
                 skillCheckObj.SetActive(false); skillCheckBackground.SetActive(false);
+                StopCoroutine(coroutine);
+                coroutine = RetrySkillCheck();
+                StartCoroutine(coroutine);
             }
             else if (skillCheckObj.GetComponent<Slider>().value == 100)
             {
-            print("SkillCheck Failed");
+                print("SkillCheck Failed");
                 skillCheckObj.SetActive(false); skillCheckBackground.SetActive(false);
+                StopCoroutine(coroutine);
+                coroutine = RetrySkillCheck();
+                StartCoroutine(coroutine);
             }
         }
     }
@@ -244,10 +260,27 @@ public class TutorialManager : MonoBehaviour
     public void DoSkillCheck()
     {
         bossScript.StandStill();
+        skillCheckObj.GetComponent<Slider>().value = 0;
+        skillCheckSound.Play();
         skillCheckObj.SetActive(true);
         skillCheckBackground.SetActive(true);
         goSkillCheckBool = true;
     }
 
-    when failed load menu
+    public IEnumerator RetrySkillCheck()
+    {
+        tutorialText.text = "You failed the skillCheck but lets try again";
+        yield return new WaitForSeconds(5);
+        DoSkillCheck();
+    }
+    public IEnumerator SkillCheckFinished()
+    {
+        tutorialText.text = "You finished the tutorial now the real challange";
+        yield return new WaitForSeconds(5);
+        LevelManager.levelNumber++;
+        print(LevelManager.levelNumber);
+        SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }

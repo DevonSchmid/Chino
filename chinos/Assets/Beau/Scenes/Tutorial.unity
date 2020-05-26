@@ -9670,7 +9670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &436517123
 Transform:
   m_ObjectHideFlags: 0
@@ -29768,7 +29768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1240633799
 Transform:
   m_ObjectHideFlags: 0
@@ -46958,7 +46958,7 @@ MonoBehaviour:
   - {fileID: 1742232937}
   - {fileID: 117292690}
   - {fileID: 819212268}
-  setPlayerLocAsLoc: 1
+  setPlayerLocAsLoc: 0
 --- !u!195 &1761316344
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -47008,9 +47008,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.4599981
   m_Direction: 1
-  m_Center: {x: 0, y: 0.84, z: 0}
+  m_Center: {x: -0, y: 1.069999, z: -0}
 --- !u!4 &1768931852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3cb4e559e07e21f4ab8712a9ce83684f,
@@ -48617,8 +48617,10 @@ MonoBehaviour:
   invisibleWall4: {fileID: 697560583}
   bossScript: {fileID: 1761316343}
   abilityReadySound: {fileID: 1882788463}
+  skillCheckSound: {fileID: 1337510816}
   skillCheckObj: {fileID: 777253222}
   skillCheckBackground: {fileID: 1707928082}
+  levelManager: {fileID: 0}
 --- !u!4 &1864453255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2b24948f01754e748876c7782c0ea8f5,
