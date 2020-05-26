@@ -14,6 +14,8 @@ public class RayCast : MonoBehaviour
 
     public AudioSource pickUpSound, useSound;
 
+    public Animator anim;
+
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * useRange, Color.green);
@@ -33,6 +35,7 @@ public class RayCast : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Item")
                 {
+                    anim.SetTrigger("PickUp");
                     pickUpSound.Play();
                     AddItem(hit.collider.gameObject.transform.parent.gameObject);
                 }

@@ -28831,6 +28831,7 @@ MonoBehaviour:
   crossHair: {fileID: 1696210230}
   pickUpSound: {fileID: 748344935}
   useSound: {fileID: 1175455726}
+  anim: {fileID: 1538360107}
 --- !u!95 &1206488236
 Animator:
   serializedVersion: 3

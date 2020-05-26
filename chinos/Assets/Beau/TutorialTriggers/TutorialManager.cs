@@ -32,11 +32,6 @@ public class TutorialManager : MonoBehaviour
         coroutine = StartTutorial();
         StartCoroutine(coroutine);
         generator1.GetComponent<GeneratorScript>().inTutorial = true;
-
-        
-        StopCoroutine(coroutine);
-        coroutine = SkillCheckFinished();
-        StartCoroutine(coroutine);
     }
 
     private void Update()
