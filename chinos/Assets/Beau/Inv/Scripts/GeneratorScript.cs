@@ -9,7 +9,7 @@ public class GeneratorScript : MonoBehaviour
     public int[] addItemIds;
     public GameObject[] addItemObj;
     int testNumber;
-    public int waitingTime = 30;
+    public float waitingTime = 30;
 
     public AudioSource gettingReadyStart, gettingReady, phoneRingingSound;
 

@@ -15,7 +15,6 @@ public class Abilitys : MonoBehaviour
 
     public virtual void Start()
     {
-        abilityImageCover = GameObject.Find("AbilityCooldownCover").GetComponent<Image>();
         abilityImageCover.rectTransform.sizeDelta = new Vector2(0, 100);
         abilityImageLoc.GetComponent<Image>().sprite = abilityImage;
     }

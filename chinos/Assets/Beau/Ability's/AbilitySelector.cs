@@ -27,6 +27,13 @@ public class AbilitySelector : MonoBehaviour
         selected.text = "Small Radius Selected";
     }
 
+    public void SelectAbilityTree()
+    {
+        abilitySelect = 3;
+        buttonClick.Play();
+        selected.text = "Engeneers hands selected";
+    }
+
     public void SelectAbilityComingSoon()
     {
         print("coming soon");
