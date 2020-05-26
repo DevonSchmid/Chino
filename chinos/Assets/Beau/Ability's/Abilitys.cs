@@ -24,12 +24,12 @@ public class Abilitys : MonoBehaviour
     {
         if (Input.GetButtonDown("Ability"))
         {
-            FPressed();
+            EPressed();
         }
         AbilityTimer();
     }
 
-    public virtual void FPressed()
+    public virtual void EPressed()
     {
     }
 

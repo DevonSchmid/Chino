@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Beau/MainMenu.unity
+    path: Assets/Beau/Scenes/MainMenu.unity
     guid: f3fa35bd1961a1e448f29afd08ffd29f
   - enabled: 1
-    path: Assets/Beau/Game.unity
+    path: Assets/Beau/Scenes/Tutorial.unity
     guid: fb0b4ee5eb8a6b542b3c3ba2dca3946c
   m_configObjects: {}

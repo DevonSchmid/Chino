@@ -84,7 +84,7 @@ public class RayCast : MonoBehaviour
                 usableItem.GetComponent<GeneratorScript>().TestIfComplete();
                 return;
             }
-            else if(usableItem.GetComponent<GeneratorScript>().phoneReady == true)
+            else if (usableItem.GetComponent<GeneratorScript>().phoneReady == true || usableItem.GetComponent<GeneratorScript>().readyForTutorial == true)
             {
                 usableItem.GetComponent<GeneratorScript>().HitThePhone();
             }

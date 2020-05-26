@@ -16,8 +16,10 @@ public class MainMenu : MonoBehaviour
         RandomBackGround();
     }
 
-    void RandomBackGround()
+    public void RandomBackGround()
     {
+        backGrounds[0].SetActive(false); backGrounds[1].SetActive(false); backGrounds[2].SetActive(false);
+
         int randomBackgroundNumber = Random.Range(0, backGrounds.Length);
         backGrounds[randomBackgroundNumber].SetActive(true);
     }

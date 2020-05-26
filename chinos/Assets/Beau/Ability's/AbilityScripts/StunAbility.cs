@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StunAbility : Abilitys
 {
@@ -31,7 +32,10 @@ public class StunAbility : Abilitys
 
         if (skillCheckObj.GetComponent<Slider>().value == 100)
         {
-            SkillCheckMissed();
+            if(SceneManager.GetActiveScene().name != "Tutorial")
+            {
+                SkillCheckMissed();
+            }
         }
     }
 
@@ -63,25 +67,26 @@ public class StunAbility : Abilitys
         skillCheckObj.SetActive(true);
     }
 
-    public override void FPressed()
+    public override void EPressed()
     {
-        base.FPressed();
-
-        if (skillCheckOptions[0].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 77 && skillCheckObj.GetComponent<Slider>().value <= 96)
+        if(SceneManager.GetActiveScene().name != "Tutorial")
         {
-            SkillCheckSucces();
-        }
-        if (skillCheckOptions[1].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 52 && skillCheckObj.GetComponent<Slider>().value <= 70)
-        {
-            SkillCheckSucces();
-        }
-        if (skillCheckOptions[2].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 19 && skillCheckObj.GetComponent<Slider>().value <= 38)
-        {
-            SkillCheckSucces();
-        }
-        else if(skillCheckOptions[0].activeSelf == true || skillCheckOptions[1].activeSelf == true || skillCheckOptions[2].activeSelf == true)
-        {
-            SkillCheckMissed();
+            if (skillCheckOptions[0].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 77 && skillCheckObj.GetComponent<Slider>().value <= 96)
+            {
+                SkillCheckSucces();
+            }
+            if (skillCheckOptions[1].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 52 && skillCheckObj.GetComponent<Slider>().value <= 70)
+            {
+                SkillCheckSucces();
+            }
+            if (skillCheckOptions[2].activeSelf == true && skillCheckObj.GetComponent<Slider>().value >= 19 && skillCheckObj.GetComponent<Slider>().value <= 38)
+            {
+                SkillCheckSucces();
+            }
+            else if (skillCheckOptions[0].activeSelf == true || skillCheckOptions[1].activeSelf == true || skillCheckOptions[2].activeSelf == true)
+            {
+                SkillCheckMissed();
+            }
         }
     }
 

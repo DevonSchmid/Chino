@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PlayerHurtBox : MonoBehaviour
 {
@@ -44,6 +45,12 @@ public class PlayerHurtBox : MonoBehaviour
             {
                 PlayerDied();
             }
+        }
+        else if(other.gameObject.tag == "TutorialBoss")
+        {
+            print("player hit");
+            TutorialManager tutorialScript = GameObject.Find("Tutorial").GetComponent<TutorialManager>();
+            tutorialScript.DoSkillCheck();
         }
     }
 

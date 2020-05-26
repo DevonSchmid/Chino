@@ -7,7 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     public float fbspeed, lrspeed, runMultiplier, crouchDevider, crouchTransfrom;
     float fbRunSpeed, lrRunSpeed, fbCrouchSpeed;
-    float movementFbSpeed, movementLrSpeed;
+    public float movementFbSpeed, movementLrSpeed;
 
     public float[] radias;
 
