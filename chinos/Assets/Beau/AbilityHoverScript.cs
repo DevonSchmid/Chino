@@ -23,6 +23,11 @@ public class AbilityHoverScript : MonoBehaviour
             infoTextPanel.SetActive(true);
             infoText.text = "makes escaping faster but moving slower *passive*";
         }
+        else if (gameObject.name == "Feathery feet")
+        {
+            infoTextPanel.SetActive(true);
+            infoText.text = "gives u a quik speed boost when pressing e *cooldown*";
+        }
         else if (gameObject.name == "Coming Soon")
         {
             infoTextPanel.SetActive(true);
