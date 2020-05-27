@@ -17,12 +17,13 @@ public class RayCast : MonoBehaviour
     public Animator anim;
 
     private void Update()
-    {
+    { 
+
         Debug.DrawRay(transform.position, transform.forward * useRange, Color.green);
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, useRange))
         {
-            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Usable")
+            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Generator" || hit.collider.gameObject.tag == "Planks")
             {
                 crossHair.SetActive(true);
             }
@@ -39,9 +40,13 @@ public class RayCast : MonoBehaviour
                     pickUpSound.Play();
                     AddItem(hit.collider.gameObject.transform.parent.gameObject);
                 }
-                if(hit.collider.gameObject.tag == "Usable")
+                if(hit.collider.gameObject.tag == "Generator")
                 {
-                    UseUsable(hit.collider.gameObject.transform.parent.gameObject);
+                    Generator(hit.collider.gameObject.transform.parent.gameObject);
+                }
+                if (hit.collider.gameObject.tag == "Planks")
+                {
+                    Planks(hit.collider.gameObject.transform.parent.gameObject);
                 }
             }
         }
@@ -70,7 +75,7 @@ public class RayCast : MonoBehaviour
         }
     }
 
-    void UseUsable(GameObject usableItem)
+    void Generator(GameObject usableItem)
     {
         for(int i = 0; i < usableItem.GetComponent<GeneratorScript>().addItemIds.Length; i++)
         {
@@ -90,6 +95,59 @@ public class RayCast : MonoBehaviour
             else if (usableItem.GetComponent<GeneratorScript>().phoneReady == true || usableItem.GetComponent<GeneratorScript>().readyForTutorial == true)
             {
                 usableItem.GetComponent<GeneratorScript>().HitThePhone();
+            }
+        }
+    }
+    void Planks(GameObject usableItem)
+    {
+        for(int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.slots[i].gameObject.GetComponent<Slot>().itemId == 3)
+            {
+                if(usableItem.GetComponent<Planks>().planksLeft > 3)
+                {
+                    //use crowbar until it breaks
+                    usableItem.GetComponent<Planks>().planksLeft--;
+                    break;
+                }
+                else if (usableItem.GetComponent<Planks>().planksLeft == 3)
+                {
+                    for(int p =0; p < inventory.slots.Length; p++)
+                    {
+                        if (inventory.slots[p].gameObject.GetComponent<Slot>().itemId == 5)
+                        {
+                            //repair crowbar
+                            usableItem.GetComponent<Planks>().planksLeft--;
+                            inventory.slots[p].GetComponent<Slot>().itemName = null;
+                            inventory.slots[p].GetComponent<Slot>().itemId = 0;
+                            inventory.slots[p].GetComponent<Slot>().itemSprite = null;
+                            inventory.slots[p].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
+                            inventory.slots[i].gameObject.GetComponent<Image>().sprite = usableItem.GetComponent<Planks>().crowbarWithTape;
+                            break;
+                        }
+                    }
+                }
+                else if(usableItem.GetComponent<Planks>().planksLeft == 2)
+                {
+                    usableItem.GetComponent<Planks>().planksLeft--;
+                    inventory.slots[i].GetComponent<Slot>().itemName = null;
+                    inventory.slots[i].GetComponent<Slot>().itemId = 0;
+                    inventory.slots[i].GetComponent<Slot>().itemSprite = null;
+                    inventory.slots[i].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
+                }
+            }
+            else if(inventory.slots[i].gameObject.GetComponent<Slot>().itemId == 4 && usableItem.GetComponent<Planks>().planksLeft == 1)
+            {
+                usableItem.GetComponent<Planks>().planksLeft--;
+                inventory.slots[i].GetComponent<Slot>().itemName = null;
+                inventory.slots[i].GetComponent<Slot>().itemId = 0;
+                inventory.slots[i].GetComponent<Slot>().itemSprite = null;
+                inventory.slots[i].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
+            }
+            else if(usableItem.GetComponent<Planks>().planksLeft == 0)
+            {
+                //escape
+                print("escape");
             }
         }
     }

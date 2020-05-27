@@ -14,24 +14,37 @@ public class AbilitySelector : MonoBehaviour
         selected.text = "Stun Selected";
     }
 
+    private void Update()
+    {
+        if(abilitySelect == 1)
+        {
+            selected.text = "Iron Head Selected";
+        }
+        if(abilitySelect == 2)
+        {
+            selected.text = "Thiefs Feet Selected";
+        }
+        if (abilitySelect == 3)
+        {
+            selected.text = "Engeneers Hands selected";
+        }
+    }
+
     public void SelectAbilityOne()
     {
         abilitySelect = 1;
         buttonClick.Play();
-        selected.text = "Stun Selected";
     }
     public void SelectAbilityTwo()
     {
         abilitySelect = 2;
         buttonClick.Play();
-        selected.text = "Small Radius Selected";
     }
 
     public void SelectAbilityTree()
     {
         abilitySelect = 3;
         buttonClick.Play();
-        selected.text = "Engeneers hands selected";
     }
 
     public void SelectAbilityComingSoon()

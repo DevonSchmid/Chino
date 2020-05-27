@@ -75,7 +75,6 @@ public class BossMovement : MonoBehaviour
     {
         if (hasRunned1 == false && alreadyInChase == false)
         {
-            print("hearing player");
             hasRunned1 = true;
 
             hearingPlayerSound.Play();

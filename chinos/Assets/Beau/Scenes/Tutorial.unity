@@ -32504,7 +32504,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: e33f7d10052822f44a0581e087f5d1a9,
         type: 3}
       propertyPath: m_TagString
-      value: Usable
+      value: Generator
       objectReference: {fileID: 0}
     - target: {fileID: 2125656731480777799, guid: e33f7d10052822f44a0581e087f5d1a9,
         type: 3}
@@ -50107,7 +50107,7 @@ MonoBehaviour:
   menuPanel: {fileID: 1597536601}
   optionsPanel: {fileID: 768247581}
   graphicsDropdown: {fileID: 550484923}
-  windowDropdown: {fileID: 0}
+  deathScreenObj: {fileID: 0}
   sensitivitySlider: {fileID: 1047402930}
   masterVolumeSlider: {fileID: 748681318}
   musicVolumeSlider: {fileID: 405178233}
@@ -51643,8 +51643,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 1206488230}
   bossFace: {fileID: 2090167201}
+  stunAbilityObj: {fileID: 0}
+  bossGameobject: {fileID: 0}
+  deathScreen: {fileID: 0}
   bossScareSound: {fileID: 622134966}
-  defeatSound: {fileID: 1240811001}
   bossFollowMusic: {fileID: 904177321}
 --- !u!1 &2022230752
 GameObject:

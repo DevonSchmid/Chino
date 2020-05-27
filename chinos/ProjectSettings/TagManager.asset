@@ -12,6 +12,8 @@ TagManager:
   - WoodFloor
   - StoneFloor
   - TutorialBoss
+  - Generator
+  - Planks
   layers:
   - Default
   - TransparentFX

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MenusManager : MonoBehaviour
 {
-    public GameObject playerCam, menuPanel, optionsPanel, graphicsDropdown, windowDropdown;
+    public GameObject playerCam, menuPanel, optionsPanel, graphicsDropdown, deathScreenObj;
 
     public Slider sensitivitySlider, masterVolumeSlider, musicVolumeSlider, soundVolumeSlider, notificationVolumeSlider;
     public AudioMixer mixer;
@@ -20,7 +21,7 @@ public class MenusManager : MonoBehaviour
 
     void SetMenuPanel()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && deathScreenObj.activeSelf == false)
         {
             if(menuPanel.activeSelf == false && optionsPanel.activeSelf == false)
             {
@@ -73,6 +74,13 @@ public class MenusManager : MonoBehaviour
         buttonClickSound.Play();
         Application.Quit();
         print("QuitGame");
+    }
+
+    public void DiedAndBackToMainMenu()
+    {
+        buttonClickSound.Play();
+        LevelManager.levelNumber = 2;
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ChangeGraphics()

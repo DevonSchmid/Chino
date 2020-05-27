@@ -21,7 +21,7 @@ public class AbilityHoverScript : MonoBehaviour
         else if (gameObject.name == "Engeneers hands")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "makes escapeing faster but moving slower *passive*";
+            infoText.text = "makes escaping faster but moving slower *passive*";
         }
         else if (gameObject.name == "Coming Soon")
         {

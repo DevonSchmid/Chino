@@ -2070,7 +2070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stun
+  m_text: Iron Head
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09f041ba77930ad44b0d99d5b31893bc, type: 2}
   m_sharedMaterial: {fileID: -7947778185290122035, guid: 09f041ba77930ad44b0d99d5b31893bc,
@@ -2140,12 +2140,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 537126320}
-    characterCount: 4
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -5408,7 +5408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPanel: {fileID: 423139133}
   inputField: {fileID: 1172567260}
-  code: show it
+  code1: show it
+  code2: skip tutorial
 --- !u!1 &1329996468
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,7 +5621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Small radius
+  m_text: thiefs feet
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09f041ba77930ad44b0d99d5b31893bc, type: 2}
   m_sharedMaterial: {fileID: -7947778185290122035, guid: 09f041ba77930ad44b0d99d5b31893bc,
@@ -5690,7 +5691,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1340574689}
-    characterCount: 12
+    characterCount: 11
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -8558,8 +8559,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 23.8
+  m_fontSizeBase: 23.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8599,7 +8600,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2052991275}
-    characterCount: 11
+    characterCount: 15
     spriteCount: 0
     spaceCount: 1
     wordCount: 2

@@ -34,6 +34,7 @@ public class StunAbility : Abilitys
         {
             if(SceneManager.GetActiveScene().name != "Tutorial")
             {
+                skillCheckObj.GetComponent<Slider>().value = 0;
                 SkillCheckMissed();
             }
         }
@@ -92,7 +93,7 @@ public class StunAbility : Abilitys
 
     void SkillCheckMissed()
     {
-        GameObject.Find("PlayerHurtBox").GetComponent<PlayerHurtBox>().PlayerDied();
+        GameObject.Find("PlayerHurtBox").GetComponent<PlayerHurtBox>().PlayerDiedNumerator();
         skillCheckObj.SetActive(false);
     }
 
@@ -143,7 +144,6 @@ public class StunAbility : Abilitys
             }
             else
             {
-                print("do skillcheck");
                 DoSkillCheck();
             }
         }

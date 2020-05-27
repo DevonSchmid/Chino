@@ -7,15 +7,17 @@ using UnityEngine.UI;
 public class PlayerHurtBox : MonoBehaviour
 {
     public GameObject playerCam, bossFace;
-    GameObject stunAbilityObj, bossGameobject;
+    public GameObject stunAbilityObj, bossGameobject;
+    public GameObject deathScreen;
+    bool hasRunned;
+    IEnumerator coroutine;
 
-    public AudioSource bossScareSound, defeatSound, bossFollowMusic;
+    public AudioSource bossScareSound, bossFollowMusic;
 
     bool lookAtBoss;
     private void Start()
     {
         bossGameobject = GameObject.Find("Boss");
-        stunAbilityObj = GameObject.Find("StunAbility");
     }
 
     private void Update()
@@ -43,7 +45,8 @@ public class PlayerHurtBox : MonoBehaviour
             }
             else
             {
-                PlayerDied();
+                coroutine = PlayerDied();
+                StartCoroutine(coroutine);
             }
         }
         else if(other.gameObject.tag == "TutorialBoss")
@@ -54,11 +57,23 @@ public class PlayerHurtBox : MonoBehaviour
         }
     }
 
-    public void PlayerDied()
+    public void PlayerDiedNumerator()
     {
-        print("You died");
-        bossFollowMusic.Stop();
-        defeatSound.Play();
+        coroutine = PlayerDied();
+        StartCoroutine(coroutine);
+    }
+    public IEnumerator PlayerDied()
+    {
+        if(hasRunned == false)
+        {
+            hasRunned = true;
+            yield return new WaitForSeconds(.5f);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            bossFollowMusic.Stop();
+            deathScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     IEnumerator lookAtBossTimer()

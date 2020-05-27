@@ -10,7 +10,6 @@ public class AbilityManager : MonoBehaviour
 
     private void Start()
     {
-        print(SceneManager.GetActiveScene().name);
         if(SceneManager.GetActiveScene().name != "Tutorial")
         {
             abilityNumber = AbilitySelector.abilitySelect;
