@@ -4,8 +4,23 @@ ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -2200494795029633644
-    second: Plane.006|Idle
+      74: -5324238279805231817
+    second: metarig|Idle
+  - first:
+      74: -4158892538556607495
+    second: metarig|Idle.001
+  - first:
+      74: 4702064405824094086
+    second: metarig|picking up player
+  - first:
+      74: 4071672527569173064
+    second: metarig|Rush
+  - first:
+      74: -9168965656290626929
+    second: metarig|Tired
+  - first:
+      74: -7408968806781539716
+    second: metarig|walk
   externalObjects: {}
   materials:
     materialImportMode: 1
