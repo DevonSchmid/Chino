@@ -34,7 +34,7 @@ public class AbilitySelector : MonoBehaviour
         }
         if (abilitySelect == 5)
         {
-            selected.text = "Thiefs sight selected";
+            selected.text = "Golden sight selected";
         }
 
     }

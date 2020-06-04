@@ -11,27 +11,27 @@ public class AbilityHoverScript : MonoBehaviour
         if (gameObject.name == "Stun")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "Do a skillCheck when catched by the killer to have a second chance *cooldown*";
+            infoText.text = "   + Get skill check when hit by boss for second chance, - boss switches faster between locations *cooldown*";
         }
         else if (gameObject.name == "SmallRadius")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "makes your alerting radius smaller when moving *passive*";
+            infoText.text = "   + Makes alerting radius smaller, - boss footstep sound is almost silent *passive*";
         }
         else if (gameObject.name == "Engeneers hands")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "makes escaping faster but moving slower *passive*";
+            infoText.text = "   + Escaping wait timers are shorter, - walking speed is slower *passive*";
         }
         else if (gameObject.name == "Feathery feet")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "gives u a quik speed boost when pressing e *cooldown*";
+            infoText.text = "   + Gives short speed boost when e is pressed, - boss normal walk is faster *cooldown*";
         }
-        else if (gameObject.name == "Thiefs Sight")
+        else if (gameObject.name == "Golden Sight")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "shows u whare the closest object is when pressing e *cooldown*";
+            infoText.text = "   Shows u whare the closest object is when pressing e *cooldown*";
         }
         else if (gameObject.name == "Coming Soon")
         {

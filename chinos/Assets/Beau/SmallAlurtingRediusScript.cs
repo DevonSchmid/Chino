@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SmallAlurtingRediusScript : PassiveAbility
 {
     public float divider;
     public GameObject player;
+    public AudioSource bossFootsteps;
 
-    // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
@@ -15,9 +16,9 @@ public class SmallAlurtingRediusScript : PassiveAbility
         player.GetComponent<PlayerMovementScript>().radias[1] *= divider;
         player.GetComponent<PlayerMovementScript>().radias[2] *= divider;
         player.GetComponent<PlayerMovementScript>().radias[3] *= divider;
+        bossFootsteps.volume = 0.005f;
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -6,6 +6,7 @@ public class BossLocationsScript : MonoBehaviour
 {
     public float timer;
     public int addTimeToTimer;
+    static public float timerDevider = 1;
 
     GameObject bossGameobject;
 
@@ -33,7 +34,7 @@ public class BossLocationsScript : MonoBehaviour
                 anim.SetBool("IsTired", true);
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = 0f;
                 bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                timer = addTimeToTimer;
+                timer = addTimeToTimer * timerDevider;
             }
         }
     }

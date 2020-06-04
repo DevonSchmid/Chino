@@ -23,6 +23,7 @@ public class StunAbility : Abilitys
         base.Start();
         skillCheckObj.SetActive(false);
         bossGameobject = GameObject.Find("Boss");
+        BossLocationsScript.timerDevider = 0.1f;
     }
 
     public override void Update()

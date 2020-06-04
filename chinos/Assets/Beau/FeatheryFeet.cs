@@ -9,12 +9,15 @@ public class FeatheryFeet : Abilitys
     public float time, fbspeed, lrspeed;
     public bool hasRunned;
 
-    // Start is called before the first frame update
+    public float bossSpeedMultiplier;
+    public BossMovement bossScript;
+
     public override void Start()
     {
         base.Start();
         lrspeed = player.GetComponent<PlayerMovementScript>().lrspeed;
         fbspeed = player.GetComponent<PlayerMovementScript>().fbspeed;
+        bossScript.bossSpeed *= bossSpeedMultiplier;
     }
 
     public override void EPressed()

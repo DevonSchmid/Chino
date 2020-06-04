@@ -11257,6 +11257,8 @@ MonoBehaviour:
   fbspeed: 0
   lrspeed: 0
   hasRunned: 0
+  bossSpeedMultiplier: 1.1
+  bossScript: {fileID: 1886786556}
 --- !u!1001 &474609195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11809,6 +11811,7 @@ Transform:
   - {fileID: 1175455725}
   - {fileID: 1337947814}
   - {fileID: 1376561891}
+  - {fileID: 543742057}
   m_Father: {fileID: 1630140551}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13183,6 +13186,134 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &543742056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543742057}
+  - component: {fileID: 543742058}
+  m_Layer: 0
+  m_Name: GolderSightAlertingSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &543742057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543742056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 491008861}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &543742058
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543742056}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4437589065717861349, guid: 001572cee8e514640a005698d5b04c51,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: dbb7d83e032eb654cb72f0609d2bc29e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 0.64
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &546459645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3cb4e559e07e21f4ab8712a9ce83684f,
@@ -21715,7 +21846,7 @@ GameObject:
   - component: {fileID: 864043716}
   - component: {fileID: 864043717}
   m_Layer: 0
-  m_Name: Thiefs SIght
+  m_Name: Golden Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21778,6 +21909,10 @@ MonoBehaviour:
   - {fileID: 505306139}
   player: {fileID: 1630140547}
   closestObject: {fileID: 0}
+  alertingSound: {fileID: 543742058}
+  bossObj: {fileID: 1886786551}
+  playerSoundLoc: {fileID: 1184346748}
+  playerObj: {fileID: 1630140547}
 --- !u!1 &868083196
 GameObject:
   m_ObjectHideFlags: 0
@@ -44553,7 +44688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e662482524cc846b41aba16459bdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 0
+  abilityNumber: 5
   abilitys:
   - {fileID: 1802839651}
   - {fileID: 1949787803}
@@ -48307,6 +48442,7 @@ MonoBehaviour:
   abilityImageCover: {fileID: 2064781221}
   divider: 0.7
   player: {fileID: 1630140547}
+  bossFootsteps: {fileID: 0}
 --- !u!4 &1949787805
 Transform:
   m_ObjectHideFlags: 0
