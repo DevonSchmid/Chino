@@ -1949,6 +1949,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012e12a8f4fc60147a9ba1a7d2ce4019, type: 3}
+--- !u!4 &60814760 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8717448951409054081, guid: 012e12a8f4fc60147a9ba1a7d2ce4019,
+    type: 3}
+  m_PrefabInstance: {fileID: 60814759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &60937900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,12 +5924,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227190285}
-  m_LocalRotation: {x: 0.4233677, y: -0.0059117195, z: -0.90585035, w: 0.0126488935}
-  m_LocalPosition: {x: 0.004, y: 0.039, z: 0.019}
-  m_LocalScale: {x: 0.11428576, y: 0.114285745, z: 0.11428575}
+  m_LocalRotation: {x: 0.3083103, y: 0.63635284, z: -0.6447131, w: -0.29042208}
+  m_LocalPosition: {x: 0.0009959982, y: -0.00012675468, z: 0.00058665883}
+  m_LocalScale: {x: 0.0011428574, y: 0.0011428576, z: 0.0011428574}
   m_Children: []
-  m_Father: {fileID: 799286696}
-  m_RootOrder: 3
+  m_Father: {fileID: 60814760}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &227190287
 SphereCollider:
@@ -21698,6 +21704,80 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &864043715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864043716}
+  - component: {fileID: 864043717}
+  m_Layer: 0
+  m_Name: Thiefs SIght
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &864043716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864043715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1760315984}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864043717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864043715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766c9ec165101574394cd3e98b495423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTimeMinPerSec: 200
+  abilityImageLoc: {fileID: 1685008635}
+  abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
+  abilityImageCover: {fileID: 2064781223}
+  abilityReadySound: {fileID: 1882788463}
+  objects:
+  - {fileID: 233786877}
+  - {fileID: 732558713}
+  - {fileID: 486838683}
+  - {fileID: 929531488}
+  - {fileID: 1482985184}
+  - {fileID: 140352759}
+  - {fileID: 884859150}
+  - {fileID: 24992463}
+  - {fileID: 227190285}
+  - {fileID: 687732108}
+  - {fileID: 1349130086}
+  activeCheck:
+  - {fileID: 2031258832}
+  - {fileID: 739731157}
+  - {fileID: 1313578178}
+  - {fileID: 619549445}
+  - {fileID: 1170597534}
+  - {fileID: 1014805662}
+  - {fileID: 1292851678}
+  - {fileID: 1802033722}
+  - {fileID: 799286695}
+  - {fileID: 107674261}
+  - {fileID: 505306139}
+  player: {fileID: 1630140547}
+  closestObject: {fileID: 0}
 --- !u!1 &868083196
 GameObject:
   m_ObjectHideFlags: 0
@@ -44457,6 +44537,7 @@ Transform:
   - {fileID: 1949787805}
   - {fileID: 1243772126}
   - {fileID: 470933921}
+  - {fileID: 864043716}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44478,6 +44559,7 @@ MonoBehaviour:
   - {fileID: 1949787803}
   - {fileID: 1243772125}
   - {fileID: 470933920}
+  - {fileID: 864043715}
 --- !u!4 &1768931852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 3cb4e559e07e21f4ab8712a9ce83684f,
@@ -47629,7 +47711,7 @@ MonoBehaviour:
   - {fileID: 758063823}
   - {fileID: 943985539}
   - {fileID: 1523637656}
-  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 3}
 --- !u!114 &1915426775
 MonoBehaviour:
   m_ObjectHideFlags: 0

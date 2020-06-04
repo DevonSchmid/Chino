@@ -28,6 +28,11 @@ public class AbilityHoverScript : MonoBehaviour
             infoTextPanel.SetActive(true);
             infoText.text = "gives u a quik speed boost when pressing e *cooldown*";
         }
+        else if (gameObject.name == "Thiefs Sight")
+        {
+            infoTextPanel.SetActive(true);
+            infoText.text = "shows u whare the closest object is when pressing e *cooldown*";
+        }
         else if (gameObject.name == "Coming Soon")
         {
             infoTextPanel.SetActive(true);

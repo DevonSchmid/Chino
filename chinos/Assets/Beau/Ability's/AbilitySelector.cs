@@ -32,6 +32,11 @@ public class AbilitySelector : MonoBehaviour
         {
             selected.text = "Feathery feet selected";
         }
+        if (abilitySelect == 5)
+        {
+            selected.text = "Thiefs sight selected";
+        }
+
     }
 
     public void SelectAbilityOne()
@@ -53,6 +58,11 @@ public class AbilitySelector : MonoBehaviour
     public void SelectAbilityfour()
     {
         abilitySelect = 4;
+        buttonClick.Play();
+    }
+    public void SelectAbilityfive()
+    {
+        abilitySelect = 5;
         buttonClick.Play();
     }
 
