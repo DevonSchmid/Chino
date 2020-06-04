@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Planks : MonoBehaviour
 {
     public int planksLeft = 2;
-    public GameObject inventory;
+    public GameObject inventory, doorHitbox;
     public Sprite brokenCrowbar, crowbarWithTape;
 
     private void Update()
@@ -27,5 +28,28 @@ public class Planks : MonoBehaviour
                 }
             }
         }
+        if(planksLeft == 2)
+        {
+            doorHitbox.SetActive(true);
+        }
+    }
+    public void startIenumerator()
+    {
+        doorHitbox.SetActive(false);
+        IEnumerator coroutine;
+        coroutine = WaitForEscape();
+        StartCoroutine(coroutine);
+    }
+
+    IEnumerator WaitForEscape()
+    {
+        yield return new WaitForSeconds(3);
+        print("escape");
+        print("Level " + LevelManager.levelNumber);
+        LevelManager.levelNumber++;
+        print("Level " + LevelManager.levelNumber);
+        SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

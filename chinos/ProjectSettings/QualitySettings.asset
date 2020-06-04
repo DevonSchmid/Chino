@@ -44,7 +44,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Medium
-    pixelLightCount: 250
+    pixelLightCount: 500
     shadows: 1
     shadowResolution: 0
     shadowProjection: 1

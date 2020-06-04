@@ -16,6 +16,7 @@ public class BossMovement : MonoBehaviour
 
     [HideInInspector] public Vector3 newLocation, oldLocation;
 
+    Animator anim;
     
     float timer;
     public int setTimeToTimer;
@@ -28,6 +29,7 @@ public class BossMovement : MonoBehaviour
     private void Start()
     {
         setupBossLocationArray();
+        anim = this.GetComponentInChildren<Animator>();
         bossAgent = this.GetComponent<NavMeshAgent>();
         bossAgent.speed = bossSpeed;
         RandomLocationNumberGenerator();
@@ -68,6 +70,9 @@ public class BossMovement : MonoBehaviour
         else
         {
             bossAgent.SetDestination(newLocation);
+            print("walking");
+            anim.SetBool("IsTired", false);
+            anim.SetBool("IsWalking", true);
         }
     }
 
@@ -77,6 +82,9 @@ public class BossMovement : MonoBehaviour
         {
             hasRunned1 = true;
 
+            anim.SetBool("IsTired", false);
+            anim.SetBool("IsWalking", false); 
+            anim.SetBool("HearingPlayer", true);
             hearingPlayerSound.Play();
 
             timer = setTimeToTimer;
@@ -97,7 +105,8 @@ public class BossMovement : MonoBehaviour
             followingMusic.Play();
             bossAgent.speed = bossRunSpeed;
             settingPlayerAsLocBool = true;
-
+            anim.SetBool("HearingPlayer", false);
+            anim.SetBool("RunningToPlayer", true);
         }
     }
 

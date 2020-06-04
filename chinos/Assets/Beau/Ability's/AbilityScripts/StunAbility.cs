@@ -9,11 +9,12 @@ public class StunAbility : Abilitys
     public int addTimeToTimer, addTimeToTimerStun;
     public float timer;
 
-    public GameObject skillCheckObj, playerSoundLocScript;
+    public GameObject skillCheckObj, playerSoundLocScript, playerHurtBox;
     public GameObject[] skillCheckOptions;
     GameObject bossGameobject;
 
     public AudioSource skillCheckSound;
+    public Animator bossAnim;
 
     bool succes;
 
@@ -93,7 +94,7 @@ public class StunAbility : Abilitys
 
     void SkillCheckMissed()
     {
-        GameObject.Find("PlayerHurtBox").GetComponent<PlayerHurtBox>().PlayerDiedNumerator();
+        playerHurtBox.GetComponent<PlayerHurtBox>().PlayerDiedNumerator();
         skillCheckObj.SetActive(false);
     }
 
@@ -102,6 +103,7 @@ public class StunAbility : Abilitys
         bossGameobject.GetComponent<BossMovement>().alreadyInChase = true;
         playerSoundLocScript.GetComponent<PlayerSoundLocScript>().timer = 0;
 
+        bossAnim.SetBool("PickingUpPlayer", false);
         succes = true;
         skillCheckObj.GetComponent<Slider>().value = 0f;
         skillCheckOptions[0].SetActive(false); skillCheckOptions[1].SetActive(false); skillCheckOptions[2].SetActive(false);
@@ -119,7 +121,7 @@ public class StunAbility : Abilitys
         }
         else
         {
-            GameObject.Find("PlayerHurtBox").GetComponent<PlayerHurtBox>().PlayerDied();
+            playerHurtBox.GetComponent<PlayerHurtBox>().PlayerDiedNumerator();
         }
     }
 
@@ -136,6 +138,9 @@ public class StunAbility : Abilitys
             {
                 succes = false;
                 print("CanWalk");
+                Animator anim = bossGameobject.GetComponentInChildren<Animator>();
+                anim.SetBool("PickedUpPlayer", false);
+                anim.SetBool("IsWalking", true);
                 bossGameobject.GetComponent<BossMovement>().hasRunned1 = false;
                 bossGameobject.GetComponent<BossMovement>().alreadyInChase = false;
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = bossGameobject.GetComponent<BossMovement>().bossSpeed;

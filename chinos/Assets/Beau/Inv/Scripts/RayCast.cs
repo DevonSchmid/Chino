@@ -46,7 +46,7 @@ public class RayCast : MonoBehaviour
                 }
                 if (hit.collider.gameObject.tag == "Planks")
                 {
-                    Planks(hit.collider.gameObject.transform.parent.gameObject);
+                    Planks(hit.collider.gameObject.transform.parent.gameObject, hit.collider.gameObject);
                 }
             }
         }
@@ -98,7 +98,7 @@ public class RayCast : MonoBehaviour
             }
         }
     }
-    void Planks(GameObject usableItem)
+    void Planks(GameObject usableItem, GameObject usableItemChild)
     {
         for(int i = 0; i < inventory.slots.Length; i++)
         {
@@ -107,6 +107,7 @@ public class RayCast : MonoBehaviour
                 if(usableItem.GetComponent<Planks>().planksLeft > 3)
                 {
                     //use crowbar until it breaks
+                    Destroy(usableItemChild);
                     usableItem.GetComponent<Planks>().planksLeft--;
                     break;
                 }
@@ -129,6 +130,7 @@ public class RayCast : MonoBehaviour
                 }
                 else if(usableItem.GetComponent<Planks>().planksLeft == 2)
                 {
+                    Destroy(usableItemChild);
                     usableItem.GetComponent<Planks>().planksLeft--;
                     inventory.slots[i].GetComponent<Slot>().itemName = null;
                     inventory.slots[i].GetComponent<Slot>().itemId = 0;
@@ -147,7 +149,7 @@ public class RayCast : MonoBehaviour
             else if(usableItem.GetComponent<Planks>().planksLeft == 0)
             {
                 //escape
-                print("escape");
+                usableItem.GetComponent<Planks>().startIenumerator();
             }
         }
     }

@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuScreen, chooseAbilityScreen;
     public GameObject[] backGrounds;
+    public TextMeshProUGUI startButtonText;
 
     public AudioSource menuMusic, buttonHoverSound, buttonClickSound;
 
+    bool canClick = false;
+    public Color normalWhite, fadedWhite;
     private void Start()
     {
         RandomBackGround();
+
+        startButtonText.color = fadedWhite;
+        StartCoroutine(StartButtonReady());
     }
 
     public void RandomBackGround()
@@ -39,14 +47,21 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        buttonClickSound.Play();
-        if(LevelManager.levelNumber == 1)
+        if(canClick == true)
         {
-            SceneManager.LoadScene("Tutorial");
-        }
-        if(LevelManager.levelNumber == 2)
-        {
-            SceneManager.LoadScene("Level1");
+            buttonClickSound.Play();
+            if (LevelManager.levelNumber == 1)
+            {
+                SceneManager.LoadScene("Tutorial");
+            }
+            if (LevelManager.levelNumber == 2)
+            {
+                SceneManager.LoadScene("Level1");
+            }
+            if (LevelManager.levelNumber == 3)
+            {
+                SceneManager.LoadScene("Level2");
+            }
         }
     }
 
@@ -80,5 +95,14 @@ public class MainMenu : MonoBehaviour
         buttonClickSound.Play();
         Application.Quit();
         print("Quitting");
+    }
+
+    IEnumerator StartButtonReady()
+    {
+        print("wait to start");
+        yield return new WaitForSeconds(5);
+        print("ready");
+        startButtonText.color = normalWhite;
+        canClick = true;
     }
 }

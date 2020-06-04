@@ -13,7 +13,6 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         LoadLevelNumber();
-        print(levelNumber);
     }
 
     public void LoadLevelNumber()

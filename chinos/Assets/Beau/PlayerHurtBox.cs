@@ -14,6 +14,8 @@ public class PlayerHurtBox : MonoBehaviour
 
     public AudioSource bossScareSound, bossFollowMusic;
 
+    public Animator bossAnim;
+
     bool lookAtBoss;
     private void Start()
     {
@@ -25,6 +27,7 @@ public class PlayerHurtBox : MonoBehaviour
         if(lookAtBoss == true)
         {
             playerCam.transform.LookAt(bossFace.transform);
+            bossGameobject.transform.LookAt(playerCam.transform);
         }
     }
 
@@ -33,6 +36,8 @@ public class PlayerHurtBox : MonoBehaviour
         if(other.gameObject.tag == "Boss")
         {
             StartCoroutine(lookAtBossTimer());
+            bossAnim.SetBool("RunningToPlayer", false);
+            bossAnim.SetBool("PickingUpPlayer", true);
 
             bossGameobject.GetComponent<BossMovement>().alreadyInChase = true;
             GetComponentInParent<PlayerMovementScript>().ableToMove = false;

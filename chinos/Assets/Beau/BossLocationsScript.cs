@@ -9,6 +9,8 @@ public class BossLocationsScript : MonoBehaviour
 
     GameObject bossGameobject;
 
+    public Animator anim;
+
      void Start()
     {
         bossGameobject = GameObject.Find("Boss");
@@ -26,6 +28,9 @@ public class BossLocationsScript : MonoBehaviour
             Vector3 desiredLocation = bossGameobject.GetComponent<BossMovement>().newLocation;
             if(gameObject.transform.position == desiredLocation)
             {
+                print("located");
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsTired", true);
                 bossGameobject.GetComponent<BossMovement>().bossAgent.speed = 0f;
                 bossGameobject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 timer = addTimeToTimer;

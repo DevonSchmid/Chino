@@ -6310,9 +6310,12 @@ MonoBehaviour:
   - {fileID: 1185053794}
   - {fileID: 2049754147}
   - {fileID: 234334123}
+  startButtonText: {fileID: 1489354736}
   menuMusic: {fileID: 1060335590}
   buttonHoverSound: {fileID: 1352637727}
   buttonClickSound: {fileID: 882171966}
+  normalWhite: {r: 1, g: 1, b: 1, a: 1}
+  fadedWhite: {r: 1, g: 1, b: 1, a: 0.3529412}
 --- !u!4 &1515369883
 Transform:
   m_ObjectHideFlags: 0

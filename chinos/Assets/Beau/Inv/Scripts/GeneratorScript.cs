@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GeneratorScript : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GeneratorScript : MonoBehaviour
 
     public bool phoneReady, gettingReadyFinished, generatorForTutorialFinsihed;
 
-    public GameObject seeTroughWallsObj;
+    public GameObject seeTroughWallsObj, bossGameobj, bossLocationObj;
 
     public bool inTutorial, readyForTutorial;
 
@@ -42,7 +43,14 @@ public class GeneratorScript : MonoBehaviour
     {
         if(phoneReady == true && inTutorial == false)
         {
+            phoneReady = false;
             print("Finised");
+            print(LevelManager.levelNumber);
+            LevelManager.levelNumber++;
+            print(LevelManager.levelNumber);
+            SceneManager.LoadScene("MainMenu");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if(inTutorial == true && readyForTutorial == true)
         {
@@ -55,6 +63,8 @@ public class GeneratorScript : MonoBehaviour
         gettingReadyStart.Play();
         yield return new WaitForSeconds(0.88f);
         gettingReady.Play();
+        bossGameobj.GetComponent<BossMovement>().bossAgent.SetDestination(bossLocationObj.transform.position);
+        bossGameobj.GetComponent<BossMovement>().newLocation = bossLocationObj.transform.position;
         yield return new WaitForSeconds(waitingTime);
         phoneRingingSound.Play();
         phoneReady = true;
