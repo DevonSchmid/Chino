@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class GoldenSight : Abilitys
+public class GoldenSight1 : Abilitys
 {
     public GameObject[] objects, activeCheck;
     public GameObject player;
