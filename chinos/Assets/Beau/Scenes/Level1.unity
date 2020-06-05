@@ -31768,7 +31768,7 @@ MonoBehaviour:
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 2f4a3d23af6771b4f8684735d9bd499e, type: 3}
   abilityImageCover: {fileID: 2064781221}
-  generator:
+  objectsWithTimer:
   - {fileID: 2031258832}
   - {fileID: 739731157}
   - {fileID: 1313578178}

@@ -3500,7 +3500,7 @@ Transform:
   - {fileID: 1702021261}
   - {fileID: 841277863}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &117925416
 GameObject:
@@ -23190,7 +23190,7 @@ Transform:
   m_Children:
   - {fileID: 516483265}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &984144159
 MonoBehaviour:
@@ -38435,7 +38435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1591054888
 Transform:
   m_ObjectHideFlags: 0
@@ -47392,6 +47392,7 @@ MonoBehaviour:
   planksLeft: 5
   inventory: {fileID: 1915426772}
   doorHitbox: {fileID: 1008779458}
+  seeTroughWallsObj: {fileID: 1591054887}
   brokenCrowbar: {fileID: 21300000, guid: bd4034f7b18248543b78081690ba1224, type: 3}
   crowbarWithTape: {fileID: 21300000, guid: c5d454e5c8cd53f4a80f70ebceb8a6bf, type: 3}
 --- !u!1 &1969299606

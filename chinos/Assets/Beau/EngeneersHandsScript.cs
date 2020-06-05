@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EngeneersHandsScript : PassiveAbility
 {
-    public GameObject[] generator;
+    public GameObject[] objectsWithTimer;
     public GameObject player;
     public float divider;
     public float multiplier;
@@ -13,9 +13,9 @@ public class EngeneersHandsScript : PassiveAbility
     public override void Start()
     {
         base.Start();
-        generator[0].GetComponent<GeneratorScript>().waitingTime *= multiplier;
-        generator[1].GetComponent<GeneratorScript>().waitingTime *= multiplier;
-        generator[2].GetComponent<GeneratorScript>().waitingTime *= multiplier;
+        objectsWithTimer[0].GetComponent<GeneratorScript>().waitingTime *= multiplier;
+        objectsWithTimer[1].GetComponent<GeneratorScript>().waitingTime *= multiplier;
+        objectsWithTimer[2].GetComponent<GeneratorScript>().waitingTime *= multiplier;
         player.GetComponent<PlayerMovementScript>().fbspeed *= divider;
         player.GetComponent<PlayerMovementScript>().lrspeed *= divider;
     }

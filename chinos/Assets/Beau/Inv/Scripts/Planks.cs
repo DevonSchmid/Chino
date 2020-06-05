@@ -6,13 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Planks : MonoBehaviour
 {
-    public int planksLeft = 2;
-    public GameObject inventory, doorHitbox;
+    public int planksLeft;
+    public GameObject inventory, doorHitbox, seeTroughWallsObj;
     public Sprite brokenCrowbar, crowbarWithTape;
+
+    private void Start()
+    {
+        if(CheatCode.showItActivated == true)
+        {
+            seeTroughWallsObj.SetActive(true);
+        }
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && planksLeft > 3)
+        if (planksLeft > 3)
         {
             planksLeft--;
             print(planksLeft);

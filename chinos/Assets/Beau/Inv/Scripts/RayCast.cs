@@ -23,7 +23,7 @@ public class RayCast : MonoBehaviour
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, useRange))
         {
-            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Generator" || hit.collider.gameObject.tag == "Planks")
+            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Generator" || hit.collider.gameObject.tag == "Planks" || hit.collider.gameObject.tag == "Trapdoor")
             {
                 crossHair.SetActive(true);
             }
@@ -47,6 +47,10 @@ public class RayCast : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Planks")
                 {
                     Planks(hit.collider.gameObject.transform.parent.gameObject, hit.collider.gameObject);
+                }
+                if(hit.collider.gameObject.tag == "Trapdoor")
+                {
+                    Trapdoor(hit.collider.gameObject.transform.parent.gameObject);
                 }
             }
         }
@@ -96,8 +100,40 @@ public class RayCast : MonoBehaviour
             {
                 usableItem.GetComponent<GeneratorScript>().HitThePhone();
             }
+            else if(usableItem.GetComponent<GeneratorScript>().phoneReady == true)
+            {
+                usableItem.GetComponent<GeneratorScript>().HitThePhone();
+            }
         }
     }
+
+    void Trapdoor(GameObject usableItem)
+    {
+        for(int i = 0; i < usableItem.GetComponent<TrapDoor>().addItemIds.Length; i++)
+        {
+            if (usableItem.GetComponent<TrapDoor>().addItemIds[i] == inventory.slots[0].GetComponent<Slot>().itemId)
+            {
+                useSound.Play();
+                usableItem.GetComponent<TrapDoor>().addItemObj[i].gameObject.SetActive(true);
+                inventory.slots[0].GetComponent<Slot>().itemName = null;
+                inventory.slots[0].GetComponent<Slot>().itemId = 0;
+                inventory.slots[0].GetComponent<Slot>().itemSprite = null;
+                inventory.slots[0].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
+                inventory.RerangeItems();
+                return;
+            }
+            else if (usableItem.GetComponent<TrapDoor>().itemCount == 2)
+            {
+                //lever
+                StartCoroutine(usableItem.GetComponent<TrapDoor>().openingHatch());
+            }
+            else if (usableItem.GetComponent<TrapDoor>().itemCount == 3)
+            {
+                usableItem.GetComponent<TrapDoor>().escapeTroughHatch();
+            }
+        }
+    }
+
     void Planks(GameObject usableItem, GameObject usableItemChild)
     {
         for(int i = 0; i < inventory.slots.Length; i++)
