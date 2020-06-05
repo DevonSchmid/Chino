@@ -21878,7 +21878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 200
+  cooldownTimeMinPerSec: 1.1
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -21909,6 +21909,7 @@ MonoBehaviour:
   - {fileID: 505306139}
   player: {fileID: 1630140547}
   closestObject: {fileID: 0}
+  time: 10
   alertingSound: {fileID: 543742058}
   bossObj: {fileID: 1886786551}
   playerSoundLoc: {fileID: 1184346748}

@@ -8,6 +8,7 @@ public class GoldenSight1 : Abilitys
     public GameObject[] objects, activeCheck;
     public GameObject player;
     public GameObject closestObject;
+    public float time;
 
     public AudioSource alertingSound;
     public GameObject bossObj, playerSoundLoc, playerObj;
@@ -25,9 +26,12 @@ public class GoldenSight1 : Abilitys
     public override void EPressed()
     {
         base.EPressed();
-        GetClosestObject();
-        closestObject.SetActive(true);
-        MakeNoise();
+        if (abilityImageCover.rectTransform.sizeDelta.y == 0)
+        {
+            GetClosestObject();
+            MakeNoise();
+            StartCoroutine(Timer());
+        }
     }
 
     void MakeNoise()
@@ -55,5 +59,13 @@ public class GoldenSight1 : Abilitys
             }
         }
         return closestObject;
+    }
+    public IEnumerator Timer()
+    {
+        closestObject.SetActive(true);
+        yield return new WaitForSeconds(time);
+        closestObject.SetActive(false);
+        abilityImageCover.rectTransform.sizeDelta = new Vector2(0, 100);
+
     }
 }
