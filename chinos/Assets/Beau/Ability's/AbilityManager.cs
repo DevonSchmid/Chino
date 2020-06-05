@@ -12,7 +12,7 @@ public class AbilityManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "Tutorial")
         {
-            //abilityNumber = AbilitySelector.abilitySelect;
+            abilityNumber = AbilitySelector.abilitySelect;
             abilitys[abilityNumber - 1].SetActive(true);
         }
         else if(SceneManager.GetActiveScene().name == "Tutorial")

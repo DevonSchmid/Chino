@@ -21878,7 +21878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 1.1
+  cooldownTimeMinPerSec: 1000
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -44689,7 +44689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e662482524cc846b41aba16459bdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 5
+  abilityNumber: 0
   abilitys:
   - {fileID: 1802839651}
   - {fileID: 1949787803}
@@ -47288,8 +47288,8 @@ MonoBehaviour:
   player: {fileID: 1630140547}
   playerSoundLoc: {fileID: 1184346748}
   bossAgent: {fileID: 0}
-  bossSpeed: 4
-  bossRunSpeed: 4.9
+  bossSpeed: 3.2
+  bossRunSpeed: 3.9
   newLocation: {x: 0, y: 0, z: 0}
   oldLocation: {x: 0, y: 0, z: 0}
   setTimeToTimer: 3

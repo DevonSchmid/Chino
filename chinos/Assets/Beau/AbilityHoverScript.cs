@@ -31,7 +31,7 @@ public class AbilityHoverScript : MonoBehaviour
         else if (gameObject.name == "Golden Sight")
         {
             infoTextPanel.SetActive(true);
-            infoText.text = "   Shows u whare the closest object is when pressing e *cooldown*";
+            infoText.text = "   + Shows u whare the closest object is when e is pressed, - makes load noice that alerts the boss *cooldown*";
         }
         else if (gameObject.name == "Coming Soon")
         {

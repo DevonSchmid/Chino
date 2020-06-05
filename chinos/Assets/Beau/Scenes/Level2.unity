@@ -45930,8 +45930,8 @@ MonoBehaviour:
   player: {fileID: 1630140547}
   playerSoundLoc: {fileID: 1184346748}
   bossAgent: {fileID: 0}
-  bossSpeed: 4
-  bossRunSpeed: 4.9
+  bossSpeed: 3.5
+  bossRunSpeed: 4.3
   newLocation: {x: 0, y: 0, z: 0}
   oldLocation: {x: 0, y: 0, z: 0}
   setTimeToTimer: 3
