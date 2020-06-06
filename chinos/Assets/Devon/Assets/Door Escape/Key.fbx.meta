@@ -2,7 +2,13 @@ fileFormatVersion: 2
 guid: caceb4a7b099cb2499ea3ee40fdacbf0
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 3082877540181086461
+    second: Armature|Key Turn
+  - first:
+      74: 2097244416564979523
+    second: Armature|KeyTurnFull
   externalObjects: {}
   materials:
     materialImportMode: 1

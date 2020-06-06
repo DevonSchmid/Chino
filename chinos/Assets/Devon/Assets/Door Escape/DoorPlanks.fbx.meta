@@ -2,7 +2,31 @@ fileFormatVersion: 2
 guid: c93d9aa5280aac245882a029952df3fa
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -2645021634625152684
+    second: Armature|Base
+  - first:
+      74: -1918789744684398650
+    second: Armature|Break Middle
+  - first:
+      74: -7724082385472684432
+    second: Armature|Break MiddleBottom
+  - first:
+      74: 3170566369938441267
+    second: Armature|BreakAll
+  - first:
+      74: 3910799092588521218
+    second: Armature|BreakBottom
+  - first:
+      74: -9040668109670268485
+    second: Armature|BreakTop
+  - first:
+      74: -5656067460227115923
+    second: Armature|BreakTopBottom
+  - first:
+      74: 2754471022520042218
+    second: Armature|BreakTopMiddle
   externalObjects: {}
   materials:
     materialImportMode: 1
