@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject buttonsOutOrder, buttonsInOrder;
+    public GameObject buttonsOutOrder, buttonsInOrder, box, key;
     public GameObject[] buttonOrder;
     int number;
 
     private void Start()
     {
         RandomButtonInput();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            OpenBox();
+        }
     }
 
     void RandomButtonInput()
@@ -23,5 +31,10 @@ public class ButtonManager : MonoBehaviour
             number++;
             RandomButtonInput();
         }
+    }
+    public void OpenBox()
+    {
+        box.GetComponent<Animator>().SetTrigger("Open");
+        key.SetActive(true);
     }
 }

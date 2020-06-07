@@ -12,7 +12,7 @@ public class RayCast : MonoBehaviour
 
     public GameObject crossHair;
 
-    public AudioSource pickUpSound, useSound;
+    public AudioSource pickUpSound, useSound, buttonClickSound,doorOpenSound;
 
     public Animator anim;
 
@@ -23,7 +23,7 @@ public class RayCast : MonoBehaviour
 
         if(Physics.Raycast(transform.position, transform.forward, out hit, useRange))
         {
-            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Generator" || hit.collider.gameObject.tag == "Planks" || hit.collider.gameObject.tag == "Trapdoor" || hit.collider.gameObject.tag == "Button")
+            if(hit.collider.gameObject.tag == "Item" || hit.collider.gameObject.tag == "Generator" || hit.collider.gameObject.tag == "Planks" || hit.collider.gameObject.tag == "Trapdoor" || hit.collider.gameObject.tag == "Button" || hit.collider.gameObject.tag == "Door")
             {
                 crossHair.SetActive(true);
             }
@@ -54,7 +54,11 @@ public class RayCast : MonoBehaviour
                 }
                 if(hit.collider.gameObject.tag == "Button")
                 {
-                    Button(hit.collider.gameObject.transform.parent.gameObject);
+                    Button(hit.collider.gameObject);
+                }
+                if(hit.collider.gameObject.tag == "Door")
+                {
+                    OpenDoorLevel4();
                 }
             }
         }
@@ -194,20 +198,41 @@ public class RayCast : MonoBehaviour
         }
     }
 
-    int buttonNumber;
+    int buttonNumber, animNumberButton;
     public GameObject buttonManager;
     void Button(GameObject usableItem)
     {
-        if (usableItem == buttonManager.GetComponent<ButtonManager>().buttonOrder[buttonNumber])
+        buttonClickSound.Play();
+            if (usableItem == buttonManager.GetComponent<ButtonManager>().buttonOrder[buttonNumber])
+            {
+                print("correct");
+                animNumberButton = usableItem.GetComponent<Button>().buttonNumber;
+                usableItem.GetComponentInChildren<Animator>().SetInteger("ButtonNumber", animNumberButton);
+                usableItem.GetComponentInChildren<Animator>().SetTrigger("ButtonPress");
+                usableItem.GetComponent<Button>().spotLight.SetActive(false);
+                buttonNumber++;
+                print(buttonNumber);
+            }
+            else
+            {
+                print("buttenReset");
+                buttonNumber = 0;
+                for (int i = 0; i < buttonManager.GetComponent<ButtonManager>().buttonOrder.Length; i++)
+                {
+                    buttonManager.GetComponent<ButtonManager>().buttonOrder[i].GetComponent<Button>().spotLight.SetActive(true);
+                }
+            }
+            if (buttonNumber == 6)
+            {
+                buttonManager.GetComponent<ButtonManager>().OpenBox();
+            }
+    }
+    void OpenDoorLevel4()
+    {
+        if(inventory.GetComponent<Inventory>().slots[0].GetComponent<Slot>().itemId == 4)
         {
-            print("correct");
-            buttonNumber++;
-            print(buttonNumber);
-        }
-        else
-        {
-            print("buttenReset");   
-            buttonNumber = 0;
+            doorOpenSound.Play();
+            print("finishe");
         }
     }
 }

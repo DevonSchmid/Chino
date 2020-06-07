@@ -15,6 +15,7 @@ TagManager:
   - Planks
   - Trapdoor
   - Button
+  - Door
   layers:
   - Default
   - TransparentFX

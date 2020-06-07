@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Beau/Scenes/Level4.unity
+- path: Assets/Beau/Scenes/Level2.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
