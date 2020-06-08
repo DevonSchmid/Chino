@@ -63,8 +63,11 @@ public class GeneratorScript : MonoBehaviour
         gettingReadyStart.Play();
         yield return new WaitForSeconds(0.88f);
         gettingReady.Play();
-        bossGameobj.GetComponent<BossMovement>().bossAgent.SetDestination(bossLocationObj.transform.position);
-        bossGameobj.GetComponent<BossMovement>().newLocation = bossLocationObj.transform.position;
+        if(SceneManager.GetActiveScene().name != "Tutorial")
+        {
+            bossGameobj.GetComponent<BossMovement>().bossAgent.SetDestination(bossLocationObj.transform.position);
+            bossGameobj.GetComponent<BossMovement>().newLocation = bossLocationObj.transform.position;
+        }
         yield return new WaitForSeconds(waitingTime);
         phoneRingingSound.Play();
         phoneReady = true;

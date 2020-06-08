@@ -7,6 +7,7 @@ public class ButtonManager : MonoBehaviour
     public GameObject buttonsOutOrder, buttonsInOrder, box, key;
     public GameObject[] buttonOrder;
     int number;
+    public AudioSource openBox;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class ButtonManager : MonoBehaviour
     }
     public void OpenBox()
     {
+        openBox.Play();
         box.GetComponent<Animator>().SetTrigger("Open");
         key.SetActive(true);
     }

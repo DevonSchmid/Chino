@@ -121,6 +121,7 @@ public class RayCast : MonoBehaviour
         {
             if (usableItem.GetComponent<TrapDoor>().addItemIds[i] == inventory.slots[0].GetComponent<Slot>().itemId)
             {
+                usableItem.GetComponent<TrapDoor>().addItemObj[i].SetActive(true);
                 useSound.Play();
                 usableItem.GetComponent<TrapDoor>().addItemObj[i].gameObject.SetActive(true);
                 inventory.slots[0].GetComponent<Slot>().itemName = null;
@@ -128,20 +129,27 @@ public class RayCast : MonoBehaviour
                 inventory.slots[0].GetComponent<Slot>().itemSprite = null;
                 inventory.slots[0].GetComponent<Slot>().GetComponent<Image>().sprite = inventory.standardImage;
                 inventory.RerangeItems();
+
+                usableItem.GetComponent<TrapDoor>().itemCount++;
                 return;
             }
             else if (usableItem.GetComponent<TrapDoor>().itemCount == 2)
             {
+                usableItem.GetComponent<TrapDoor>().itemCount = 3;
                 //lever
+                print("use lever");
+                usableItem.GetComponent<TrapDoor>().addItemObj[0].GetComponent<Animator>().SetTrigger("Use lever");
+                usableItem.GetComponent<TrapDoor>().addItemObj[1].GetComponent<Animator>().SetTrigger("Use Gear");
                 StartCoroutine(usableItem.GetComponent<TrapDoor>().openingHatch());
             }
-            else if (usableItem.GetComponent<TrapDoor>().itemCount == 3)
+            else if (usableItem.GetComponent<TrapDoor>().itemCount == 4)
             {
                 usableItem.GetComponent<TrapDoor>().escapeTroughHatch();
             }
         }
     }
 
+    public AudioSource plankBreak, tapeSound;
     void Planks(GameObject usableItem, GameObject usableItemChild)
     {
         for(int i = 0; i < inventory.slots.Length; i++)
@@ -150,6 +158,7 @@ public class RayCast : MonoBehaviour
             {
                 if(usableItem.GetComponent<Planks>().planksLeft > 3)
                 {
+                    plankBreak.Play();
                     //use crowbar until it breaks
                     Destroy(usableItemChild);
                     usableItem.GetComponent<Planks>().planksLeft--;
@@ -162,6 +171,7 @@ public class RayCast : MonoBehaviour
                         if (inventory.slots[p].gameObject.GetComponent<Slot>().itemId == 5)
                         {
                             //repair crowbar
+                            tapeSound.Play();
                             usableItem.GetComponent<Planks>().planksLeft--;
                             inventory.slots[p].GetComponent<Slot>().itemName = null;
                             inventory.slots[p].GetComponent<Slot>().itemId = 0;
@@ -174,6 +184,7 @@ public class RayCast : MonoBehaviour
                 }
                 else if(usableItem.GetComponent<Planks>().planksLeft == 2)
                 {
+                    plankBreak.Play();
                     Destroy(usableItemChild);
                     usableItem.GetComponent<Planks>().planksLeft--;
                     inventory.slots[i].GetComponent<Slot>().itemName = null;

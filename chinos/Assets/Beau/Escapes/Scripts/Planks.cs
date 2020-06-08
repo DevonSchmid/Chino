@@ -9,6 +9,7 @@ public class Planks : MonoBehaviour
     public int planksLeft;
     public GameObject inventory, doorHitbox, seeTroughWallsObj;
     public Sprite brokenCrowbar, crowbarWithTape;
+    public AudioSource crowbarBreak, doorUnlockSound;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class Planks : MonoBehaviour
             {
                 if(inventory.GetComponent<Inventory>().slots[i].gameObject.GetComponent<Slot>().itemId == 3)
                 {
+                    crowbarBreak.Play();
                     inventory.GetComponent<Inventory>().slots[i].gameObject.GetComponent<Image>().sprite = brokenCrowbar;
                 }
             }
@@ -51,6 +53,7 @@ public class Planks : MonoBehaviour
 
     IEnumerator WaitForEscape()
     {
+        doorUnlockSound.Play();
         yield return new WaitForSeconds(3);
         print("escape");
         print("Level " + LevelManager.levelNumber);
