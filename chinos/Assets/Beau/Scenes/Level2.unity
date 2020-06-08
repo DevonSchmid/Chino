@@ -5254,6 +5254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caceb4a7b099cb2499ea3ee40fdacbf0, type: 3}
+--- !u!4 &200131407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 200131406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &202345033 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 48b273d97996cb4489a45030c2d2ad4f,
@@ -6921,7 +6926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 793433335}
-  - {fileID: 433571521}
+  - {fileID: 200131407}
   m_Father: {fileID: 88154508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9734,12 +9739,6 @@ SphereCollider:
 --- !u!1 &433571520 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: caceb4a7b099cb2499ea3ee40fdacbf0,
-    type: 3}
-  m_PrefabInstance: {fileID: 200131406}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &433571521 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: caceb4a7b099cb2499ea3ee40fdacbf0,
     type: 3}
   m_PrefabInstance: {fileID: 200131406}
   m_PrefabAsset: {fileID: 0}
@@ -29139,6 +29138,10 @@ MonoBehaviour:
   abilityImage: {fileID: 21300000, guid: 2f4a3d23af6771b4f8684735d9bd499e, type: 3}
   abilityImageCover: {fileID: 2064781221}
   objectsWithTimer: []
+  secondObj:
+  - {fileID: 1778053069}
+  - {fileID: 1294746125}
+  - {fileID: 244329077}
   player: {fileID: 1630140547}
   divider: 0.9
   multiplier: 0.5
@@ -43327,6 +43330,7 @@ Transform:
   - {fileID: 1243772126}
   - {fileID: 1711488380}
   - {fileID: 1883973183}
+  - {fileID: 2124288915}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50243,6 +50247,62 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114123894}
   m_Mesh: {fileID: 0}
+--- !u!1 &2124288914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2124288915}
+  - component: {fileID: 2124288916}
+  m_Layer: 0
+  m_Name: Owls ears
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2124288915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124288914}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1760315984}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2124288916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124288914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd1207c8a003a7468073efc1331bcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityImageLoc: {fileID: 1685008635}
+  abilityImage: {fileID: 21300000, guid: ca939aa2ef544034f8cee5826dc825ad, type: 3}
+  abilityImageCover: {fileID: 2064781221}
+  stepSounds: {fileID: 1442050862}
+  alertingRadius: {fileID: 1175603059}
+  player: {fileID: 1630140547}
+  newVolume: 0.1
+  newDist: 21
+  lrspeed: 0.075
+  fbspeed: 0.15
+  minusSpeed: 0.15
+  maxfbSpeed: 2
+  maxlrSpeed: 0.5
 --- !u!1 &2126542561
 GameObject:
   m_ObjectHideFlags: 0
