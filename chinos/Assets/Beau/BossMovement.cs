@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 public class BossMovement : MonoBehaviour
 {
     [HideInInspector] public GameObject[] locations;
-    public GameObject bossLocationsEmptyGameObject, player,playerSoundLoc;
+    public GameObject bossLocationsEmptyGameObject, player,playerSoundLoc, owlsEarsScript;
 
     int randomLocationNumber;
 
@@ -80,6 +80,7 @@ public class BossMovement : MonoBehaviour
     {
         if (hasRunned1 == false && alreadyInChase == false)
         {
+            owlsEarsScript.GetComponent<OwlsEarsScript>().MinusSpeed();
             hasRunned1 = true;
 
             anim.SetBool("IsTired", false);

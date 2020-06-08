@@ -7358,7 +7358,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1860100575}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &335285629
 AudioSource:
@@ -16149,7 +16149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1532530372}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &676466993
 AudioSource:
@@ -20671,29 +20671,25 @@ MonoBehaviour:
   abilityImageCover: {fileID: 2064781223}
   abilityReadySound: {fileID: 1882788463}
   objects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 700969761}
+  - {fileID: 1326449983}
+  - {fileID: 515141935}
+  - {fileID: 1869326365}
+  - {fileID: 444308769}
+  - {fileID: 53515705}
+  - {fileID: 756870719}
+  - {fileID: 503172052}
+  - {fileID: 661957816}
   activeCheck:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1532530371}
+  - {fileID: 1860100574}
+  - {fileID: 1717430614}
+  - {fileID: 8296172669279203503}
+  - {fileID: 8296172667427467993}
+  - {fileID: 8296172668714091444}
+  - {fileID: 8296172669286777664}
+  - {fileID: 8296172668215116779}
+  - {fileID: 8296172668895587489}
   player: {fileID: 1630140547}
   closestObject: {fileID: 0}
   time: 10
@@ -36539,7 +36535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1717430615}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1535903732
 Light:
@@ -40819,7 +40815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1717430615}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1716078599
 AudioSource:
@@ -46509,7 +46505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1532530372}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1999262425
 Light:

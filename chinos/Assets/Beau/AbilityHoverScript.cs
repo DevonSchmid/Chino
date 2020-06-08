@@ -33,13 +33,17 @@ public class AbilityHoverScript : MonoBehaviour
             infoTextPanel.SetActive(true);
             infoText.text = "   + Shows u whare the closest object is when e is pressed, - makes load noice that alerts the boss *cooldown*";
         }
+        else if (gameObject.name == "Owls ears")
+        {
+            infoTextPanel.SetActive(true);
+            infoText.text = "   + the boss his footsteps are louder, - when the boss hears you get slower *passive*";
+        }
         else if (gameObject.name == "Coming Soon")
         {
             infoTextPanel.SetActive(true);
             infoText.text = "Ability coming soon";
         }
     }
-
     public void ExitHover()
     {
         infoTextPanel.SetActive(false);

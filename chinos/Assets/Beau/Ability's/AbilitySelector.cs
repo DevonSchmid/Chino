@@ -65,6 +65,11 @@ public class AbilitySelector : MonoBehaviour
         abilitySelect = 5;
         buttonClick.Play();
     }
+    public void SelectAbilitySix()
+    {
+        abilitySelect = 6;
+        buttonClick.Play();
+    }
 
     public void SelectAbilityComingSoon()
     {

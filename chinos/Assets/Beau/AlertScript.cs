@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlertScript : MonoBehaviour
 {
-    bool inRange;
+    public bool inRange;
     public GameObject bossGameobject;
 
     public void Start()
