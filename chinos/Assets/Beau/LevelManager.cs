@@ -37,9 +37,5 @@ public class LevelManager : MonoBehaviour
         {
             LevelText.text = "Level 4";
         }
-        else if (levelNumber == 6)
-        {
-            LevelText.text = "Level 5";
-        }
     }
 }

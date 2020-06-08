@@ -16900,7 +16900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityImageLoc: {fileID: 1685008635}
-  abilityImage: {fileID: 21300000, guid: ca939aa2ef544034f8cee5826dc825ad, type: 3}
+  abilityImage: {fileID: 21300000, guid: 1a5c7093c0da82e45ae53e98d8115997, type: 3}
   abilityImageCover: {fileID: 2064781221}
   stepSounds: {fileID: 1442050862}
   alertingRadius: {fileID: 1175603059}
@@ -21206,7 +21206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 1000
+  cooldownTimeMinPerSec: 1.5
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -25014,8 +25014,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9290150da7acd404587835e52c7f484d, type: 2}
-  m_sharedMaterial: {fileID: 4405103364163286322, guid: 9290150da7acd404587835e52c7f484d,
+  m_fontAsset: {fileID: 11400000, guid: 6f04ec37bc862a949ba28d9cf3eac048, type: 2}
+  m_sharedMaterial: {fileID: -4609826098707348629, guid: 6f04ec37bc862a949ba28d9cf3eac048,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -28043,6 +28043,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1027186515}
+  - {fileID: 2053851126}
   m_Father: {fileID: 1815706313}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29762,6 +29763,7 @@ MonoBehaviour:
   useSound: {fileID: 1175455726}
   buttonClickSound: {fileID: 0}
   doorOpenSound: {fileID: 0}
+  buttonWrong: {fileID: 0}
   anim: {fileID: 1538360107}
   plankBreak: {fileID: 0}
   tapeSound: {fileID: 0}
@@ -30593,7 +30595,9 @@ MonoBehaviour:
   - {fileID: 2031258832}
   - {fileID: 739731157}
   - {fileID: 1313578178}
+  secondObj: []
   player: {fileID: 1630140547}
+  buttonManager: {fileID: 0}
   divider: 0.9
   multiplier: 0.5
 --- !u!4 &1249691227 stripped
@@ -49671,6 +49675,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f7a424e439c2a41ba68e6eca41a14e, type: 3}
+--- !u!1 &2053851125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2053851126}
+  - component: {fileID: 2053851127}
+  m_Layer: 5
+  m_Name: StoryTextManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2053851126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053851125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1169004993}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2053851127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053851125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c64d22b97f05e46a3a29a0087e97aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyText: {fileID: 1027186516}
 --- !u!1001 &2055148295
 PrefabInstance:
   m_ObjectHideFlags: 0

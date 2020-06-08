@@ -12,7 +12,7 @@ public class RayCast : MonoBehaviour
 
     public GameObject crossHair;
 
-    public AudioSource pickUpSound, useSound, buttonClickSound,doorOpenSound;
+    public AudioSource pickUpSound, useSound, buttonClickSound,doorOpenSound, buttonWrong;
 
     public Animator anim;
 
@@ -227,6 +227,7 @@ public class RayCast : MonoBehaviour
             else
             {
                 print("buttenReset");
+                buttonWrong.Play();
                 buttonNumber = 0;
                 for (int i = 0; i < buttonManager.GetComponent<ButtonManager>().buttonOrder.Length; i++)
                 {
@@ -243,7 +244,7 @@ public class RayCast : MonoBehaviour
         if(inventory.GetComponent<Inventory>().slots[0].GetComponent<Slot>().itemId == 4)
         {
             doorOpenSound.Play();
-            print("finishe");
+            buttonManager.GetComponent<ButtonManager>().FinishGame();
         }
     }
 }

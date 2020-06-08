@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -38,5 +39,16 @@ public class ButtonManager : MonoBehaviour
         openBox.Play();
         box.GetComponent<Animator>().SetTrigger("Open");
         key.SetActive(true);
+    }
+
+    public void FinishGame()
+    {
+        print("escape");
+        print("Level " + LevelManager.levelNumber);
+        LevelManager.levelNumber++;
+        print("Level " + LevelManager.levelNumber);
+        SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

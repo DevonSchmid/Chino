@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EngeneersHandsScript : PassiveAbility
 {
     public GameObject[] objectsWithTimer, secondObj;
-    public GameObject player, buttonManeger;
+    public GameObject player, buttonManager;
     public float divider;
     public float multiplier;
 
@@ -15,7 +15,7 @@ public class EngeneersHandsScript : PassiveAbility
     {
         base.Start();
 
-        if (!objectsWithTimer[0])
+        if (objectsWithTimer.Length != 0)
         {
             objectsWithTimer[0].GetComponent<GeneratorScript>().waitingTime *= multiplier;
             objectsWithTimer[1].GetComponent<GeneratorScript>().waitingTime *= multiplier;
@@ -23,8 +23,7 @@ public class EngeneersHandsScript : PassiveAbility
             player.GetComponent<PlayerMovementScript>().fbspeed *= divider;
             player.GetComponent<PlayerMovementScript>().lrspeed *= divider;
         }
-
-        else if (objectsWithTimer[0])
+        else if (objectsWithTimer.Length == 0)
         {
             if(SceneManager.GetActiveScene().name == "Level2")
             {
@@ -39,7 +38,8 @@ public class EngeneersHandsScript : PassiveAbility
             }
             else if (SceneManager.GetActiveScene().name == "Level4")
             {
-                buttonManeger.GetComponent<ButtonManager>().buttonOrder[0].GetComponent<Button>().seeTroughWallsObj.SetActive(true);
+                secondObj[0] = buttonManager.GetComponent<ButtonManager>().buttonOrder[0];
+                secondObj[0].GetComponent<Button>().seeTroughWallsObj.SetActive(true);
             }
 
 
