@@ -18,6 +18,8 @@ public class StunAbility : Abilitys
 
     bool succes;
 
+    public Collider bossColider;
+
     public override void Start()
     {
         base.Start();
@@ -104,6 +106,8 @@ public class StunAbility : Abilitys
         bossGameobject.GetComponent<BossMovement>().alreadyInChase = true;
         playerSoundLocScript.GetComponent<PlayerSoundLocScript>().timer = 0;
 
+        bossColider.enabled = false;
+
         bossAnim.SetBool("PickingUpPlayer", false);
         succes = true;
         skillCheckObj.GetComponent<Slider>().value = 0f;
@@ -139,6 +143,9 @@ public class StunAbility : Abilitys
             {
                 succes = false;
                 print("CanWalk");
+
+                bossColider.enabled = true;
+
                 Animator anim = bossGameobject.GetComponentInChildren<Animator>();
                 anim.SetBool("PickedUpPlayer", false);
                 anim.SetBool("IsWalking", true);

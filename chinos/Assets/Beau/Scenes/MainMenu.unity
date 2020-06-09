@@ -3385,8 +3385,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 28.26
+  m_fontSizeBase: 28.26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3431,7 +3431,7 @@ MonoBehaviour:
     spaceCount: 1
     wordCount: 2
     linkCount: 0
-    lineCount: 3
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -5728,6 +5728,7 @@ MonoBehaviour:
   - show it
   - skip tutorial
   - load level
+  - stop boss
 --- !u!1 &1329996468
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,9 +6630,11 @@ MonoBehaviour:
   - {fileID: 2049754147}
   - {fileID: 234334123}
   startButtonText: {fileID: 1489354736}
+  quitButtonText: {fileID: 672089908}
   menuMusic: {fileID: 1060335590}
   buttonHoverSound: {fileID: 1352637727}
   buttonClickSound: {fileID: 882171966}
+  canClick: 0
   normalWhite: {r: 1, g: 1, b: 1, a: 1}
   fadedWhite: {r: 1, g: 1, b: 1, a: 0.3529412}
   congretsScreen: {fileID: 1571994354}
@@ -7602,7 +7605,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1743511562}
-    characterCount: 11
+    characterCount: 9
     spriteCount: 0
     spaceCount: 1
     wordCount: 2

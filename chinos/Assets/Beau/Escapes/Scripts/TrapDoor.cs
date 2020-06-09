@@ -11,13 +11,24 @@ public class TrapDoor : MonoBehaviour
     public int openingTime;
     public AudioSource creekingSound, leverSound;
 
+    bool runOnce;
+
+    private void Start()
+    {
+        print(LevelManager.levelNumber);
+    }
+
     public void escapeTroughHatch()
     {
-        print("escape");
-        LevelManager.levelNumber++;
-        SceneManager.LoadScene("MainMenu");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if(runOnce == false)
+        {
+            runOnce = true;
+            print("escape");
+            LevelManager.levelNumber++;
+            SceneManager.LoadScene("MainMenu");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public IEnumerator openingHatch()
@@ -28,6 +39,6 @@ public class TrapDoor : MonoBehaviour
         yield return new WaitForSeconds(openingTime);
         print("open");
         creekingSound.Stop();
-        itemCount = 3;
+        itemCount = 4;
     }
 }

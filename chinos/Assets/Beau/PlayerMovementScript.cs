@@ -90,7 +90,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (Lr == 0 && Fb == 0)
         {
-            if (Input.GetButton("Crouch"))
+            if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
                 radiusCol.radius = radias[0];
                 soundImage.sprite = sound1;
@@ -110,7 +110,6 @@ public class PlayerMovementScript : MonoBehaviour
             }
             if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
             {
-                
                 radiusCol.radius = radias[1];
                 soundImage.sprite = sound2;
 
@@ -129,7 +128,7 @@ public class PlayerMovementScript : MonoBehaviour
             movementFbSpeed *= runMultiplier;
             movementLrSpeed *= runMultiplier;
         }
-        if (Input.GetButtonUp("Run") && !(Input.GetButton("Crouch")))
+        if (Input.GetButtonUp("Run")) //&& !(Input.GetButton("Crouch")))
         {
             movementFbSpeed = fbspeed;
             movementLrSpeed = lrspeed;
@@ -143,7 +142,7 @@ public class PlayerMovementScript : MonoBehaviour
             movementFbSpeed /= crouchDevider;
             movementLrSpeed /= crouchDevider;
         }
-        else if (Input.GetButtonUp("Crouch") && !(Input.GetButton("Run")))
+        else if (Input.GetButtonUp("Crouch"))// && !(Input.GetButton("Run")))
         {
             transform.localScale = new Vector3(1, 1, 1);
             movementFbSpeed = fbspeed;

@@ -12,6 +12,8 @@ public class CheatCode : MonoBehaviour
 
     static public bool showItActivated;
 
+    static public bool stopBoss;
+
     private void Start()
     {
         placeholderMain = placeholder.GetComponent<TextMeshProUGUI>().text;
@@ -41,6 +43,11 @@ public class CheatCode : MonoBehaviour
                 inputField.GetComponent<TMP_InputField>().text = "";
                 inputPanel.SetActive(false);
             }
+        }
+        else if(inputField.GetComponent<TMP_InputField>().text == code[3])
+        {
+            stopBoss = !stopBoss;
+            inputField.GetComponent<TMP_InputField>().text = "";
         }
         else if (inputField.GetComponent<TMP_InputField>().text == code[2])
         {

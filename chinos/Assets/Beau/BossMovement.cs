@@ -33,7 +33,13 @@ public class BossMovement : MonoBehaviour
         bossAgent = this.GetComponent<NavMeshAgent>();
         bossAgent.speed = bossSpeed;
         RandomLocationNumberGenerator();
+
+        bossSpeedEx = bossSpeed;
+        bossRunSpeedEx = bossRunSpeed;
     }
+
+    float bossSpeedEx, bossRunSpeedEx;
+    bool hasBeenPushed;
 
     private void Update()
     {
@@ -41,6 +47,24 @@ public class BossMovement : MonoBehaviour
 
         Timer();
         SettingNewLocationAsPlayer();
+
+        if (CheatCode.stopBoss == true && Input.GetKeyDown(KeyCode.K))
+        {
+            if(hasBeenPushed == false)
+            {
+                hasBeenPushed = true;
+                bossAgent.speed = 0;
+                bossSpeed = 0;
+                bossRunSpeed = 0;
+            }
+            else if(hasBeenPushed == true)
+            {
+                hasBeenPushed = false;
+                bossAgent.speed = bossSpeedEx;
+                bossSpeed = bossSpeedEx;
+                bossRunSpeed = bossRunSpeedEx;
+            }
+        }
     }
 
     public void setupBossLocationArray()

@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuScreen, chooseAbilityScreen;
     public GameObject[] backGrounds;
-    public TextMeshProUGUI startButtonText;
+    public TextMeshProUGUI startButtonText, quitButtonText;
 
     public AudioSource menuMusic, buttonHoverSound, buttonClickSound;
 
@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
         RandomBackGround();
 
+        quitButtonText.color = fadedWhite;
         startButtonText.color = fadedWhite;
         StartCoroutine(StartButtonReady());
     }
@@ -103,13 +104,16 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        PlayerPrefs.SetInt("CurrentLevel", LevelManager.levelNumber);
-        PlayerPrefs.SetInt("CurrentAbil", AbilitySelector.abilitySelect);
-        PlayerPrefs.Save();
+        if(canClick == true)
+        {
+            PlayerPrefs.SetInt("CurrentLevel", LevelManager.levelNumber);
+            PlayerPrefs.SetInt("CurrentAbil", AbilitySelector.abilitySelect);
+            PlayerPrefs.Save();
 
-        buttonClickSound.Play();
-        Application.Quit();
-        print("Quitting");
+            buttonClickSound.Play();
+            Application.Quit();
+            print("Quitting");
+        }
     }
 
     public GameObject congretsScreen;
@@ -122,8 +126,9 @@ public class MainMenu : MonoBehaviour
     IEnumerator StartButtonReady()
     {
         print("wait to start");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         print("ready");
+        quitButtonText.color = normalWhite;
         startButtonText.color = normalWhite;
         canClick = true;
     }

@@ -16,6 +16,10 @@ public class AbilitySelector : MonoBehaviour
 
     private void Update()
     {
+        if(abilitySelect == 0)
+        {
+            abilitySelect = 1;
+        }
         if(abilitySelect == 1)
         {
             selected.text = "Iron Head Selected";
@@ -26,7 +30,7 @@ public class AbilitySelector : MonoBehaviour
         }
         if (abilitySelect == 3)
         {
-            selected.text = "Engeneers Hands selected";
+            selected.text = "Engineers Hands selected";
         }
         if (abilitySelect == 4)
         {

@@ -11,10 +11,11 @@ public class Planks : MonoBehaviour
     public Sprite brokenCrowbar, crowbarWithTape;
     public AudioSource crowbarBreak, doorUnlockSound;
 
-    public bool runOnce;
+    public bool runOnce, runOnce2;
 
     private void Start()
     {
+        print(LevelManager.levelNumber);
         if(CheatCode.showItActivated == true)
         {
             seeTroughWallsObj.SetActive(true);
@@ -51,14 +52,17 @@ public class Planks : MonoBehaviour
 
     IEnumerator WaitForEscape()
     {
-        doorUnlockSound.Play();
-        yield return new WaitForSeconds(3);
-        print("escape");
-        print("Level " + LevelManager.levelNumber);
-        LevelManager.levelNumber++;
-        print("Level " + LevelManager.levelNumber);
-        SceneManager.LoadScene("MainMenu");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (runOnce2 == false)
+        {
+            runOnce2 = true;
+            doorUnlockSound.Play();
+            yield return new WaitForSeconds(3);
+            print("escape");
+            LevelManager.levelNumber++;
+            print("Level " + LevelManager.levelNumber);
+            SceneManager.LoadScene("MainMenu");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }
