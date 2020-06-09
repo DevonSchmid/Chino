@@ -48,6 +48,7 @@ public class CheatCode : MonoBehaviour
         {
             stopBoss = !stopBoss;
             inputField.GetComponent<TMP_InputField>().text = "";
+            inputPanel.SetActive(false);
         }
         else if (inputField.GetComponent<TMP_InputField>().text == code[2])
         {

@@ -103,21 +103,20 @@ public class PlayerMovementScript : MonoBehaviour
         }
         else
         {
-            if (Input.GetButton("Run") && !Input.GetButton("Crouch"))
+            if(movementFbSpeed == fbspeed * runMultiplier)
             {
                 radiusCol.radius = radias[3];
                 soundImage.sprite = sound4;
             }
-            if (Input.GetButton("Crouch") && !Input.GetButton("Run"))
-            {
-                radiusCol.radius = radias[1];
-                soundImage.sprite = sound2;
-
-            }
-            if (!Input.GetButton("Crouch") && !Input.GetButton("Run"))
+            if(movementFbSpeed == fbspeed)
             {
                 radiusCol.radius = radias[2];
                 soundImage.sprite = sound3;
+            }
+            if(movementFbSpeed == fbspeed / crouchDevider)
+            {
+                radiusCol.radius = radias[1];
+                soundImage.sprite = sound2;
             }
         }
     }
