@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 1
     smallestHole: 0.1
     backfaceThreshold: 10.1
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 4ab2bd45e67ac334fb4dca275a082f40
+  m_OcclusionCullingData: {fileID: 36300000, guid: e2e68521baea7bf4093434354e19fc2d,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -17890,7 +17891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  itemId: 0
+  itemId: 3
   itemSprite: {fileID: 0}
 --- !u!114 &758063823
 MonoBehaviour:
@@ -40054,10 +40055,10 @@ MonoBehaviour:
   movementFbSpeed: 0
   movementLrSpeed: 0
   radias:
-  - 4
-  - 8
-  - 15
-  - 25
+  - 2
+  - 6
+  - 13
+  - 20
   soundImage: {fileID: 1590612216}
   sound1: {fileID: 21300000, guid: 81fd4e55cafdd6247b2c55de8735383a, type: 3}
   sound2: {fileID: 21300000, guid: 0fa984af9b4fc1e41a99a6dc6f9f5640, type: 3}
@@ -46189,7 +46190,7 @@ MonoBehaviour:
   bossLocationsEmptyGameObject: {fileID: 1670597262}
   player: {fileID: 1630140547}
   playerSoundLoc: {fileID: 1184346748}
-  owlsEarsScript: {fileID: 0}
+  owlsEarsScript: {fileID: 2124288914}
   bossAgent: {fileID: 0}
   bossSpeed: 3.5
   bossRunSpeed: 4.3
@@ -47694,6 +47695,7 @@ MonoBehaviour:
   crowbarWithTape: {fileID: 21300000, guid: c5d454e5c8cd53f4a80f70ebceb8a6bf, type: 3}
   crowbarBreak: {fileID: 407286072}
   doorUnlockSound: {fileID: 574971148}
+  runOnce: 0
 --- !u!1 &1969299606
 GameObject:
   m_ObjectHideFlags: 0

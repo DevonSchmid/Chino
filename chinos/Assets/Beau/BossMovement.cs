@@ -80,7 +80,10 @@ public class BossMovement : MonoBehaviour
     {
         if (hasRunned1 == false && alreadyInChase == false)
         {
-            owlsEarsScript.GetComponent<OwlsEarsScript>().MinusSpeed();
+            if(owlsEarsScript.activeSelf == true)
+            {
+                owlsEarsScript.GetComponent<OwlsEarsScript>().MinusSpeed();
+            }
             hasRunned1 = true;
 
             anim.SetBool("IsTired", false);

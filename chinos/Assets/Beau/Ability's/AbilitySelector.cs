@@ -36,7 +36,10 @@ public class AbilitySelector : MonoBehaviour
         {
             selected.text = "Golden sight selected";
         }
-
+        if (abilitySelect == 6)
+        {
+            selected.text = "Owls Ears selected";
+        }
     }
 
     public void SelectAbilityOne()

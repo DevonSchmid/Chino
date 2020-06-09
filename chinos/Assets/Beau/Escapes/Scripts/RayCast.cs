@@ -156,7 +156,7 @@ public class RayCast : MonoBehaviour
         {
             if (inventory.slots[i].gameObject.GetComponent<Slot>().itemId == 3)
             {
-                if(usableItem.GetComponent<Planks>().planksLeft > 3)
+                if(usableItem.GetComponent<Planks>().planksLeft >= 4)
                 {
                     plankBreak.Play();
                     //use crowbar until it breaks

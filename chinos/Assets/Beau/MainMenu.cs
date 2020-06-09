@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class MainMenu : MonoBehaviour
 
     public AudioSource menuMusic, buttonHoverSound, buttonClickSound;
 
-    bool canClick = false;
+    public bool canClick = false;
     public Color normalWhite, fadedWhite;
+
     private void Start()
     {
+        Time.timeScale = 1;
         RandomBackGround();
 
         startButtonText.color = fadedWhite;
@@ -62,6 +65,14 @@ public class MainMenu : MonoBehaviour
             {
                 SceneManager.LoadScene("Level2");
             }
+            if (LevelManager.levelNumber == 4)
+            {
+                SceneManager.LoadScene("Level3");
+            }
+            if (LevelManager.levelNumber == 5)
+            {
+                SceneManager.LoadScene("Level4");
+            }
         }
     }
 
@@ -92,15 +103,26 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("CurrentLevel", LevelManager.levelNumber);
+        PlayerPrefs.SetInt("CurrentAbil", AbilitySelector.abilitySelect);
+        PlayerPrefs.Save();
+
         buttonClickSound.Play();
         Application.Quit();
         print("Quitting");
     }
 
+    public GameObject congretsScreen;
+    public void ResetGame()
+    {
+        congretsScreen.SetActive(false);
+        LevelManager.levelNumber = 2;
+    }
+
     IEnumerator StartButtonReady()
     {
         print("wait to start");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         print("ready");
         startButtonText.color = normalWhite;
         canClick = true;

@@ -72,8 +72,7 @@ public class MenusManager : MonoBehaviour
     public void QuitGame()
     {
         buttonClickSound.Play();
-        Application.Quit();
-        print("QuitGame");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void DiedAndBackToMainMenu()

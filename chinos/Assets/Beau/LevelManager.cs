@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     static public int levelNumber = 1;
     public TextMeshProUGUI LevelText;
+    public GameObject congretsScreen;
 
     private void Update()
     {
@@ -17,6 +18,10 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevelNumber()
     {
+        if(levelNumber == 0)
+        {
+            levelNumber = 1;
+        }
         if (levelNumber == 1)
         {
             LevelText.text = "Tutorial";
@@ -36,6 +41,10 @@ public class LevelManager : MonoBehaviour
         else if (levelNumber == 5)
         {
             LevelText.text = "Level 4";
+        }
+        else if(levelNumber == 6)
+        {
+            congretsScreen.SetActive(true);
         }
     }
 }

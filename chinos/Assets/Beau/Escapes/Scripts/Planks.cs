@@ -11,6 +11,8 @@ public class Planks : MonoBehaviour
     public Sprite brokenCrowbar, crowbarWithTape;
     public AudioSource crowbarBreak, doorUnlockSound;
 
+    public bool runOnce;
+
     private void Start()
     {
         if(CheatCode.showItActivated == true)
@@ -21,18 +23,14 @@ public class Planks : MonoBehaviour
 
     private void Update()
     {
-        if (planksLeft > 3)
-        {
-            planksLeft--;
-            print(planksLeft);
-        }
 
         if (planksLeft == 3)
         {
             for(int i = 0; i < inventory.GetComponent<Inventory>().slots.Length; i++)
             {
-                if(inventory.GetComponent<Inventory>().slots[i].gameObject.GetComponent<Slot>().itemId == 3)
+                if(inventory.GetComponent<Inventory>().slots[i].gameObject.GetComponent<Slot>().itemId == 3 && runOnce == false)
                 {
+                    runOnce = true;
                     crowbarBreak.Play();
                     inventory.GetComponent<Inventory>().slots[i].gameObject.GetComponent<Image>().sprite = brokenCrowbar;
                 }

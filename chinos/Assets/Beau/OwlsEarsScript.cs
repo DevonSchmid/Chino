@@ -6,18 +6,11 @@ public class OwlsEarsScript : PassiveAbility
 {
     public GameObject stepSounds, alertingRadius, player;
     public float newVolume, newDist, lrspeed, fbspeed, minusSpeed, maxfbSpeed, maxlrSpeed;
-    // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         stepSounds.GetComponent<AudioSource>().volume = newVolume;
         stepSounds.GetComponent<AudioSource>().maxDistance = newDist;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {        
-
     }
 
     public void MinusSpeed()

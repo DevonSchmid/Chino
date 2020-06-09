@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 1
     smallestHole: 0.1
     backfaceThreshold: 10.1
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 4da36081c17012e49a36e7e8a63d4395
+  m_OcclusionCullingData: {fileID: 36300000, guid: abb6f230e692cde488c9be9038ad2ee5,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -26468,7 +26469,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8542135713662024172, guid: 001572cee8e514640a005698d5b04c51,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 55246ef4840ffb0449bc9c0f46b31b4b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.117
   m_Pitch: 1
   Loop: 0
@@ -34335,7 +34336,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8542135713662024172, guid: 001572cee8e514640a005698d5b04c51,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 55246ef4840ffb0449bc9c0f46b31b4b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.117
   m_Pitch: 1
   Loop: 0
@@ -38141,10 +38142,10 @@ MonoBehaviour:
   movementFbSpeed: 0
   movementLrSpeed: 0
   radias:
-  - 4
-  - 8
-  - 15
-  - 25
+  - 2
+  - 6
+  - 13
+  - 20
   soundImage: {fileID: 1590612216}
   sound1: {fileID: 21300000, guid: 81fd4e55cafdd6247b2c55de8735383a, type: 3}
   sound2: {fileID: 21300000, guid: 0fa984af9b4fc1e41a99a6dc6f9f5640, type: 3}
@@ -44655,10 +44656,10 @@ MonoBehaviour:
   bossLocationsEmptyGameObject: {fileID: 1670597262}
   player: {fileID: 1630140547}
   playerSoundLoc: {fileID: 1184346748}
-  owlsEarsScript: {fileID: 0}
+  owlsEarsScript: {fileID: 995707590}
   bossAgent: {fileID: 0}
-  bossSpeed: 3.2
-  bossRunSpeed: 3.9
+  bossSpeed: 4
+  bossRunSpeed: 4.6
   newLocation: {x: 0, y: 0, z: 0}
   oldLocation: {x: 0, y: 0, z: 0}
   setTimeToTimer: 3
@@ -49357,7 +49358,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8542135713662024172, guid: 001572cee8e514640a005698d5b04c51,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 55246ef4840ffb0449bc9c0f46b31b4b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.117
   m_Pitch: 1
   Loop: 0

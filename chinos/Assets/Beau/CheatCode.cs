@@ -10,10 +10,6 @@ public class CheatCode : MonoBehaviour
 
     public string[] code;
 
-    public string code1 = "show it";
-    public string code2 = "skip tutorial";
-    public string code3 = "load level";
-
     static public bool showItActivated;
 
     private void Start()
@@ -57,22 +53,36 @@ public class CheatCode : MonoBehaviour
             {
                 placeholder.GetComponent<TextMeshProUGUI>().text = placeholderMain;
                 inputField.GetComponent<TMP_InputField>().text = "";
-                print("Load level Tutorial");
                 LevelManager.levelNumber = 1;
+                inputPanel.SetActive(false);
             }
             else if(inputField.GetComponent<TMP_InputField>().text == "1")
             {
                 placeholder.GetComponent<TextMeshProUGUI>().text = placeholderMain;
                 inputField.GetComponent<TMP_InputField>().text = "";
-                print("Load level 1");
                 LevelManager.levelNumber = 2;
+                inputPanel.SetActive(false);
             }
             else if(inputField.GetComponent<TMP_InputField>().text == "2")
             {
                 placeholder.GetComponent<TextMeshProUGUI>().text = placeholderMain;
                 inputField.GetComponent<TMP_InputField>().text = "";
-                print("Load level 2");
                 LevelManager.levelNumber = 3;
+                inputPanel.SetActive(false);
+            }
+            else if (inputField.GetComponent<TMP_InputField>().text == "3")
+            {
+                placeholder.GetComponent<TextMeshProUGUI>().text = placeholderMain;
+                inputField.GetComponent<TMP_InputField>().text = "";
+                LevelManager.levelNumber = 4;
+                inputPanel.SetActive(false);
+            }
+            else if (inputField.GetComponent<TMP_InputField>().text == "4")
+            {
+                placeholder.GetComponent<TextMeshProUGUI>().text = placeholderMain;
+                inputField.GetComponent<TMP_InputField>().text = "";
+                LevelManager.levelNumber = 5;
+                inputPanel.SetActive(false);
             }
             else
             {

@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 1
     smallestHole: 0.1
     backfaceThreshold: 10.1
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: df07b066c1d94b541babce7d129e7db7
+  m_OcclusionCullingData: {fileID: 36300000, guid: 88f1081320d3b7f4d94e90222db88fbc,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -6270,7 +6271,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -40403,10 +40404,10 @@ MonoBehaviour:
   movementFbSpeed: 0
   movementLrSpeed: 0
   radias:
-  - 4
-  - 8
-  - 15
-  - 25
+  - 2
+  - 6
+  - 13
+  - 20
   soundImage: {fileID: 1590612216}
   sound1: {fileID: 21300000, guid: 81fd4e55cafdd6247b2c55de8735383a, type: 3}
   sound2: {fileID: 21300000, guid: 0fa984af9b4fc1e41a99a6dc6f9f5640, type: 3}
@@ -47380,7 +47381,7 @@ MonoBehaviour:
   - {fileID: 758063823}
   - {fileID: 943985539}
   - {fileID: 1523637656}
-  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 3}
+  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1915426775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49377,7 +49378,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -49504,7 +49505,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

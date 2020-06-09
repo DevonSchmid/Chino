@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 1
     smallestHole: 0.1
     backfaceThreshold: 10.1
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 241bf30dc7cb482439288e76d8bad045
+  m_OcclusionCullingData: {fileID: 36300000, guid: efdf1bd75c45d314497335cb47f950fa,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -7212,6 +7213,7 @@ GameObject:
   - component: {fileID: 346953911}
   - component: {fileID: 346953912}
   - component: {fileID: 346953914}
+  - component: {fileID: 346953913}
   m_Layer: 0
   m_Name: Button (3)
   m_TagString: Button
@@ -7251,6 +7253,25 @@ MonoBehaviour:
   buttonNumber: 3
   spotLight: {fileID: 247027794}
   seeTroughWallsObj: {fileID: 1473947677}
+--- !u!95 &346953913
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346953910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &346953914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11876,7 +11897,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -4437589065717861349, guid: 001572cee8e514640a005698d5b04c51,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d592b86b43db5a8468e2024308dce048, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.194
   m_Pitch: 1
   Loop: 0
@@ -21639,6 +21660,7 @@ GameObject:
   - component: {fileID: 941858445}
   - component: {fileID: 941858446}
   - component: {fileID: 941858448}
+  - component: {fileID: 941858447}
   m_Layer: 0
   m_Name: Button (5)
   m_TagString: Button
@@ -21678,6 +21700,25 @@ MonoBehaviour:
   buttonNumber: 5
   spotLight: {fileID: 1972371988}
   seeTroughWallsObj: {fileID: 549419348}
+--- !u!95 &941858447
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941858444}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &941858448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24591,6 +24632,7 @@ GameObject:
   - component: {fileID: 1062857003}
   - component: {fileID: 1062857004}
   - component: {fileID: 1062857006}
+  - component: {fileID: 1062857005}
   m_Layer: 0
   m_Name: Button (6)
   m_TagString: Button
@@ -24630,6 +24672,25 @@ MonoBehaviour:
   buttonNumber: 6
   spotLight: {fileID: 1119285066}
   seeTroughWallsObj: {fileID: 642833336}
+--- !u!95 &1062857005
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062857002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1062857006
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31084,6 +31145,7 @@ GameObject:
   - component: {fileID: 1318189394}
   - component: {fileID: 1318189395}
   - component: {fileID: 1318189397}
+  - component: {fileID: 1318189396}
   m_Layer: 0
   m_Name: Button (4)
   m_TagString: Button
@@ -31123,6 +31185,25 @@ MonoBehaviour:
   buttonNumber: 4
   spotLight: {fileID: 734906640}
   seeTroughWallsObj: {fileID: 344442146}
+--- !u!95 &1318189396
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318189393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1318189397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36830,6 +36911,7 @@ GameObject:
   - component: {fileID: 1560063516}
   - component: {fileID: 1560063517}
   - component: {fileID: 1560063519}
+  - component: {fileID: 1560063518}
   m_Layer: 0
   m_Name: Button (1)
   m_TagString: Button
@@ -36869,6 +36951,25 @@ MonoBehaviour:
   buttonNumber: 1
   spotLight: {fileID: 1358977268}
   seeTroughWallsObj: {fileID: 894619391}
+--- !u!95 &1560063518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560063515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1560063519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38348,10 +38449,10 @@ MonoBehaviour:
   movementFbSpeed: 0
   movementLrSpeed: 0
   radias:
-  - 4
-  - 8
-  - 15
-  - 25
+  - 2
+  - 6
+  - 13
+  - 20
   soundImage: {fileID: 1590612216}
   sound1: {fileID: 21300000, guid: 81fd4e55cafdd6247b2c55de8735383a, type: 3}
   sound2: {fileID: 21300000, guid: 0fa984af9b4fc1e41a99a6dc6f9f5640, type: 3}
@@ -38411,6 +38512,7 @@ GameObject:
   - component: {fileID: 1632197171}
   - component: {fileID: 1632197172}
   - component: {fileID: 1632197174}
+  - component: {fileID: 1632197173}
   m_Layer: 0
   m_Name: Button (2)
   m_TagString: Button
@@ -38450,6 +38552,25 @@ MonoBehaviour:
   buttonNumber: 2
   spotLight: {fileID: 1227352573}
   seeTroughWallsObj: {fileID: 456829015}
+--- !u!95 &1632197173
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632197170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818a120cfd41cf040bb24e9093f7d397, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1632197174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44660,10 +44781,10 @@ MonoBehaviour:
   bossLocationsEmptyGameObject: {fileID: 1670597262}
   player: {fileID: 1630140547}
   playerSoundLoc: {fileID: 1184346748}
-  owlsEarsScript: {fileID: 0}
+  owlsEarsScript: {fileID: 1052263304}
   bossAgent: {fileID: 0}
-  bossSpeed: 4.3
-  bossRunSpeed: 4.9
+  bossSpeed: 4.4
+  bossRunSpeed: 5.2
   newLocation: {x: 0, y: 0, z: 0}
   oldLocation: {x: 0, y: 0, z: 0}
   setTimeToTimer: 3
@@ -45215,7 +45336,7 @@ MonoBehaviour:
   - {fileID: 758063823}
   - {fileID: 943985539}
   - {fileID: 1523637656}
-  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 3}
+  standardImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &1915426775
 MonoBehaviour:
   m_ObjectHideFlags: 0
