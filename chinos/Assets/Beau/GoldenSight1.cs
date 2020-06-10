@@ -9,6 +9,7 @@ public class GoldenSight1 : Abilitys
     public GameObject player;
     public GameObject closestObject;
     public float time;
+    public bool ispressed;
 
     public AudioSource alertingSound;
     public GameObject bossObj, playerSoundLoc, playerObj;
@@ -26,8 +27,10 @@ public class GoldenSight1 : Abilitys
     public override void EPressed()
     {
         base.EPressed();
-        if (abilityImageCover.rectTransform.sizeDelta.y == 0)
+        if (abilityImageCover.rectTransform.sizeDelta.y == 0&& ispressed == false)
         {
+            ispressed = true;
+            print("epressed");
             GetClosestObject();
             MakeNoise();
             StartCoroutine(Timer());
@@ -55,6 +58,7 @@ public class GoldenSight1 : Abilitys
                 { 
                     closest = dist;
                     closestObject = objects[i];
+                    print(closestObject);
                 }
             }
         }
@@ -63,8 +67,11 @@ public class GoldenSight1 : Abilitys
     public IEnumerator Timer()
     {
         closestObject.SetActive(true);
+        print(closestObject.name);
         yield return new WaitForSeconds(time);
+        ispressed = false;
         closestObject.SetActive(false);
+        print("closestobjectno");
         abilityImageCover.rectTransform.sizeDelta = new Vector2(0, 100);
 
     }
