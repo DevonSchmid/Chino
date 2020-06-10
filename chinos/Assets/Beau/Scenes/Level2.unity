@@ -7846,7 +7846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 793433335}
-  - {fileID: 1757685749}
+  - {fileID: 433571521}
   m_Father: {fileID: 88154508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11014,39 +11014,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &433571520
+--- !u!1 &433571520 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: caceb4a7b099cb2499ea3ee40fdacbf0,
     type: 3}
   m_PrefabInstance: {fileID: 200131406}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 433571523}
-  - component: {fileID: 433571522}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &433571521
+--- !u!4 &433571521 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: caceb4a7b099cb2499ea3ee40fdacbf0,
     type: 3}
   m_PrefabInstance: {fileID: 200131406}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840238953}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1757685749}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &433571522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11060,20 +11039,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23588485, y: 0.20418294, z: 0.09213137}
   m_Center: {x: -0.00016767232, y: 0.39791003, z: 0.0022139363}
---- !u!4 &433571523
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 200131406}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 433571520}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1757685749}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &434754499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22046,22 +22011,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e156bfb474151624eae8fc493e4cd603, type: 3}
---- !u!1 &840238953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 200131406}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 433571521}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &841277862
 GameObject:
   m_ObjectHideFlags: 0
@@ -45187,6 +45136,7 @@ MonoBehaviour:
   sound3: {fileID: 21300000, guid: 0b5b19d74b52f9c4fa663bef187d7f6b, type: 3}
   sound4: {fileID: 21300000, guid: d6a5c4cd2d294c042a38b14254b76343, type: 3}
   ableToMove: 1
+  owlsEarGameObj: {fileID: 2124288914}
 --- !u!54 &1630140553
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48356,7 +48306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcf71c02583baf47b2b29b8123e9013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 3.3
+  cooldownTimeMinPerSec: 1.5
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: f507a316b069b194ba6671e243586051, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -49281,38 +49231,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 389386961}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1757685748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 200131406}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1757685749}
-  m_Layer: 0
-  m_Name: Key (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1757685749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 200131406}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757685748}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 433571523}
-  - {fileID: 433571521}
-  m_Father: {fileID: 292900250}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760315983
 GameObject:
   m_ObjectHideFlags: 0
@@ -49367,6 +49285,9 @@ MonoBehaviour:
   - {fileID: 1802839651}
   - {fileID: 1949787803}
   - {fileID: 1243772125}
+  - {fileID: 1711488379}
+  - {fileID: 1883973182}
+  - {fileID: 2124288914}
 --- !u!1 &1761644924
 GameObject:
   m_ObjectHideFlags: 0
@@ -50285,7 +50206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fb60880f31a4b46b39f7d57ef3ed20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 1.1
+  cooldownTimeMinPerSec: 0.83
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 4f8479c40906fed40a7e730a2cf5c1f6, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -51861,13 +51782,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 1.5
+  cooldownTimeMinPerSec: 1.1
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
   abilityImageCover: {fileID: 2064781223}
   abilityReadySound: {fileID: 1882788463}
   objects:
-  - {fileID: 1591054887}
+  - {fileID: 1439275471}
   - {fileID: 1640709139}
   - {fileID: 1891576982}
   - {fileID: 1388255588}
@@ -51876,9 +51797,8 @@ MonoBehaviour:
   - {fileID: 1022487341}
   - {fileID: 111297634}
   - {fileID: 743790976}
-  - {fileID: 1439275471}
   activeCheck:
-  - {fileID: 1966214929}
+  - {fileID: 244329077}
   - {fileID: 2114123894}
   - {fileID: 1972082532}
   - {fileID: 1891087464}
@@ -51887,7 +51807,6 @@ MonoBehaviour:
   - {fileID: 8296172669480956871}
   - {fileID: 1778053069}
   - {fileID: 1294746125}
-  - {fileID: 244329077}
   player: {fileID: 1630140547}
   closestObject: {fileID: 0}
   time: 10

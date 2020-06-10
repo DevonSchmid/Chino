@@ -2014,12 +2014,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012e12a8f4fc60147a9ba1a7d2ce4019, type: 3}
---- !u!4 &60814760 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8717448951409054081, guid: 012e12a8f4fc60147a9ba1a7d2ce4019,
-    type: 3}
-  m_PrefabInstance: {fileID: 60814759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &62142005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6766,12 +6760,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227190285}
-  m_LocalRotation: {x: 0.3083103, y: 0.63635284, z: -0.6447131, w: -0.29042208}
-  m_LocalPosition: {x: 0.0009959982, y: -0.00012675468, z: 0.00058665883}
-  m_LocalScale: {x: 0.0011428574, y: 0.0011428576, z: 0.0011428574}
+  m_LocalRotation: {x: 0.4233677, y: -0.005911677, z: -0.90585035, w: 0.012648924}
+  m_LocalPosition: {x: 0.0039989804, y: 0.03900001, z: 0.01900114}
+  m_LocalScale: {x: 0.11428576, y: 0.11428576, z: 0.11428575}
   m_Children: []
-  m_Father: {fileID: 60814760}
-  m_RootOrder: 0
+  m_Father: {fileID: 799286696}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &227190287
 SphereCollider:
@@ -12469,7 +12463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcf71c02583baf47b2b29b8123e9013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 20
+  cooldownTimeMinPerSec: 1.5
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: f507a316b069b194ba6671e243586051, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -23669,86 +23663,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &864043715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 864043716}
-  - component: {fileID: 864043717}
-  m_Layer: 0
-  m_Name: Golden Sight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &864043716
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864043715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1760315984}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &864043717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864043715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 20
-  abilityImageLoc: {fileID: 1685008635}
-  abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
-  abilityImageCover: {fileID: 2064781223}
-  abilityReadySound: {fileID: 1882788463}
-  objects:
-  - {fileID: 233786877}
-  - {fileID: 732558713}
-  - {fileID: 486838683}
-  - {fileID: 929531488}
-  - {fileID: 1482985184}
-  - {fileID: 140352759}
-  - {fileID: 884859150}
-  - {fileID: 24992463}
-  - {fileID: 227190285}
-  - {fileID: 687732108}
-  - {fileID: 1349130086}
-  activeCheck:
-  - {fileID: 2031258832}
-  - {fileID: 739731157}
-  - {fileID: 1313578178}
-  - {fileID: 619549445}
-  - {fileID: 1170597534}
-  - {fileID: 1014805662}
-  - {fileID: 1292851678}
-  - {fileID: 1802033722}
-  - {fileID: 799286695}
-  - {fileID: 107674261}
-  - {fileID: 505306139}
-  player: {fileID: 1630140547}
-  closestObject: {fileID: 0}
-  time: 10
-  ispressed: 0
-  alertingSound: {fileID: 543742058}
-  bossObj: {fileID: 1886786551}
-  playerSoundLoc: {fileID: 1184346748}
-  playerObj: {fileID: 1630140547}
 --- !u!1 &868083196
 GameObject:
   m_ObjectHideFlags: 0
@@ -45414,6 +45328,7 @@ MonoBehaviour:
   sound3: {fileID: 21300000, guid: 0b5b19d74b52f9c4fa663bef187d7f6b, type: 3}
   sound4: {fileID: 21300000, guid: d6a5c4cd2d294c042a38b14254b76343, type: 3}
   ableToMove: 1
+  owlsEarGameObj: {fileID: 697837730}
 --- !u!54 &1630140553
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48938,7 +48853,7 @@ Transform:
   - {fileID: 1949787805}
   - {fileID: 1243772126}
   - {fileID: 470933921}
-  - {fileID: 864043716}
+  - {fileID: 1835310592}
   - {fileID: 697837731}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -48955,13 +48870,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e662482524cc846b41aba16459bdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 5
+  abilityNumber: 0
   abilitys:
   - {fileID: 1802839651}
   - {fileID: 1949787803}
   - {fileID: 1243772125}
   - {fileID: 470933920}
-  - {fileID: 864043715}
+  - {fileID: 1835310591}
   - {fileID: 697837730}
 --- !u!4 &1770148274 stripped
 Transform:
@@ -49902,7 +49817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fb60880f31a4b46b39f7d57ef3ed20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTimeMinPerSec: 20
+  cooldownTimeMinPerSec: 0.83
   abilityImageLoc: {fileID: 1685008635}
   abilityImage: {fileID: 21300000, guid: 4f8479c40906fed40a7e730a2cf5c1f6, type: 3}
   abilityImageCover: {fileID: 2064781223}
@@ -51114,6 +51029,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 373540259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1835310591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835310592}
+  - component: {fileID: 1835310593}
+  m_Layer: 0
+  m_Name: Golden Sight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1835310592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835310591}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1760315984}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835310593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835310591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d48e286c428b64eb583d4ce3bd0822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTimeMinPerSec: 1.1
+  abilityImageLoc: {fileID: 1685008635}
+  abilityImage: {fileID: 21300000, guid: 419e6823391203d429356639a6071eff, type: 3}
+  abilityImageCover: {fileID: 2064781223}
+  abilityReadySound: {fileID: 1882788463}
+  objects:
+  - {fileID: 233786877}
+  - {fileID: 732558713}
+  - {fileID: 486838683}
+  - {fileID: 929531488}
+  - {fileID: 1482985184}
+  - {fileID: 140352759}
+  - {fileID: 687732108}
+  - {fileID: 884859150}
+  - {fileID: 24992463}
+  activeCheck:
+  - {fileID: 2031258832}
+  - {fileID: 739731157}
+  - {fileID: 1313578178}
+  - {fileID: 619549445}
+  - {fileID: 1170597534}
+  - {fileID: 1014805662}
+  - {fileID: 107674261}
+  - {fileID: 1292851678}
+  - {fileID: 1802033722}
+  player: {fileID: 227190285}
+  closestObject: {fileID: 0}
+  time: 10
+  ispressed: 0
+  alertingSound: {fileID: 543742058}
+  bossObj: {fileID: 1886786551}
+  playerSoundLoc: {fileID: 1184346748}
+  playerObj: {fileID: 1630140547}
 --- !u!1 &1838857483
 GameObject:
   m_ObjectHideFlags: 0

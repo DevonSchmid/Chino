@@ -86,6 +86,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
+    public GameObject owlsEarGameObj;
     public void SetAlertColRadius()
     {
         if (Lr == 0 && Fb == 0)
@@ -103,21 +104,43 @@ public class PlayerMovementScript : MonoBehaviour
         }
         else
         {
-            if(movementFbSpeed == fbspeed * runMultiplier)
+            if(owlsEarGameObj.activeSelf == false)
             {
-                radiusCol.radius = radias[3];
-                soundImage.sprite = sound4;
+                if (movementFbSpeed == fbspeed * runMultiplier)
+                {
+                    radiusCol.radius = radias[3];
+                    soundImage.sprite = sound4;
+                }
+                if (movementFbSpeed == fbspeed)
+                {
+                    radiusCol.radius = radias[2];
+                    soundImage.sprite = sound3;
+                }
+                if (movementFbSpeed == fbspeed / crouchDevider)
+                {
+                    radiusCol.radius = radias[1];
+                    soundImage.sprite = sound2;
+                }
             }
-            if(movementFbSpeed == fbspeed)
+            else if(owlsEarGameObj.activeSelf == true)
             {
-                radiusCol.radius = radias[2];
-                soundImage.sprite = sound3;
+                if (Input.GetButton("Run"))
+                {
+                    radiusCol.radius = radias[3];
+                    soundImage.sprite = sound4;
+                }
+                else if (Input.GetButton("Crouch"))
+                {
+                    radiusCol.radius = radias[1];
+                    soundImage.sprite = sound2;
+                }
+                else
+                {
+                    radiusCol.radius = radias[2];
+                    soundImage.sprite = sound3;
+                }
             }
-            if(movementFbSpeed == fbspeed / crouchDevider)
-            {
-                radiusCol.radius = radias[1];
-                soundImage.sprite = sound2;
-            }
+            
         }
     }
     public void Run()
@@ -127,7 +150,7 @@ public class PlayerMovementScript : MonoBehaviour
             movementFbSpeed *= runMultiplier;
             movementLrSpeed *= runMultiplier;
         }
-        if (Input.GetButtonUp("Run")) //&& !(Input.GetButton("Crouch")))
+        if (Input.GetButtonUp("Run"))
         {
             movementFbSpeed = fbspeed;
             movementLrSpeed = lrspeed;
@@ -141,7 +164,7 @@ public class PlayerMovementScript : MonoBehaviour
             movementFbSpeed /= crouchDevider;
             movementLrSpeed /= crouchDevider;
         }
-        else if (Input.GetButtonUp("Crouch"))// && !(Input.GetButton("Run")))
+        else if (Input.GetButtonUp("Crouch"))
         {
             transform.localScale = new Vector3(1, 1, 1);
             movementFbSpeed = fbspeed;
