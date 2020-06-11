@@ -134,7 +134,7 @@ public class TutorialManager : MonoBehaviour
 
     public IEnumerator StartTutorial()
     {
-        tutorialText.text = "Welcome to (Game Name)";
+        tutorialText.text = "Welcome to Trial of the duck";
         yield return new WaitForSeconds(3);
         tutorialText.text = "This is the tutorial";
         yield return new WaitForSeconds(3);
